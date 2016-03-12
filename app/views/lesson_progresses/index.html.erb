@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lesson Progresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lesson_progresses.each do |lesson_progress| %>
+      <tr>
+        <td><%= lesson_progress.lesson %></td>
+        <td><%= lesson_progress.user %></td>
+        <td><%= link_to 'Show', lesson_progress %></td>
+        <td><%= link_to 'Edit', edit_lesson_progress_path(lesson_progress) %></td>
+        <td><%= link_to 'Destroy', lesson_progress, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lesson progress', new_lesson_progress_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312021345) do
+ActiveRecord::Schema.define(version: 20160312024333) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_name"
@@ -26,6 +26,27 @@ ActiveRecord::Schema.define(version: 20160312021345) do
 
   add_index "courses_users", ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id"
   add_index "courses_users", ["user_id"], name: "index_courses_users_on_user_id"
+
+  create_table "lesson_progresses", force: :cascade do |t|
+    t.integer  "lesson_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lesson_progresses", ["lesson_id"], name: "index_lesson_progresses_on_lesson_id"
+  add_index "lesson_progresses", ["user_id"], name: "index_lesson_progresses_on_user_id"
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "lesson_name"
+    t.string   "lesson_description"
+    t.string   "lesson_objective"
+    t.integer  "topic_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "lessons", ["topic_id"], name: "index_lessons_on_topic_id"
 
   create_table "managers", id: false, force: :cascade do |t|
     t.integer "user_id"
@@ -42,6 +63,15 @@ ActiveRecord::Schema.define(version: 20160312021345) do
 
   add_index "students", ["student_user_id", "user_id"], name: "index_students_on_student_user_id_and_user_id", unique: true
   add_index "students", ["user_id", "student_user_id"], name: "index_students_on_user_id_and_student_user_id", unique: true
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "topic_name"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "topics", ["course_id"], name: "index_topics_on_course_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
