@@ -1,10 +1,12 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
+  before_action :verify_ownership, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.all.where(user_id: current_user.id)
   end
 
   # GET /courses/1
@@ -70,5 +72,11 @@ class CoursesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:course_name)
+    end
+
+    def verify_ownership
+      if current_user.id != @course.user_id
+        redirect_to courses_url
+      end
     end
 end
