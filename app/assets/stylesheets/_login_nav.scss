@@ -1,0 +1,32 @@
+#full_user_nav {
+  height: 96vh;
+  text-align: center;
+}
+
+#login_nav_top_section {
+  height: 40vh;
+}
+
+#top_space_div {
+  height: 10vh;
+}
+
+.circle {
+  border-radius: 50%;
+  background: #A8A8A8;
+  height: 100px;
+  width: 100px;
+}
+
+#after_logo {
+  height: 6vh;
+}
+
+.list-group .list-group-item {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+input .form-control #exampleInputEmail1 {
+  border-radius: none !important;
+}

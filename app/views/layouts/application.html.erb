@@ -10,18 +10,9 @@
 </head>
 <body>
 
-  <div class="col-md-3" id="user_nav_partial">
-    <div><%= render :partial => '/commons/user_nav' %>
-      <% if current_user %>
-        Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
-      <% else %>
-        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-md-9 container ">
+
     <%= yield %>
-  </div>
+
 
 </body>
 </html>

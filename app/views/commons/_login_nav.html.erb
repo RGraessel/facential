@@ -1,0 +1,21 @@
+
+<div id="full_user_nav">
+  <div id="login_nav_top_section">
+    <div class="" id="top_space_div"></div>
+    <img class="circle" id="profile_picture"/>
+    <h1></h1>
+    <div class="" id="after_logo"></div>
+  </div>
+  <br>
+  <ul class="form-group">
+    <%= form_tag '/login' do %>
+    <li>
+      <%= text_field_tag :email, "", class: "form-control", id: "exampleInputEmail1", placeholder: "Email" %>
+    <li>
+    <%= password_field_tag :password, "", class: "form-control", id: "exampleInputPassword1", placeholder: "Password" %>
+    </li>
+  </ul>
+      <%= submit_tag "Submit", class: "btn btn-default" %>
+    <% end %>
+
+</div>
