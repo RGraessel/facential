@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :courses
   has_many :lesson_progresses
   has_many :topics, through: :courses
+  has_many :lessons, through: :topics
   has_secure_password
 
 has_and_belongs_to_many :students,
