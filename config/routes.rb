@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   resources :courses
   resources :users
 
-  root 'users#index'
+  # root 'users#index'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
   get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  # post '/login' => 'sessions#create'
+  post '/login' => 'users#show'
   get '/logout' => 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  root 'users#show'
+  # root 'users#show'
 
   get '/home' => 'users#index'
 
