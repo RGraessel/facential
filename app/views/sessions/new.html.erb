@@ -1,9 +1,8 @@
-<h1>Login</h1>
-
-<%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
+<div class="col-md-3" id="user_nav_partial">
+  <div><%= render :partial => '/commons/login_nav' %>
+  </div>
+</div>
+<div class="col-md-9 container">
+  <!-- The rest of the page goes here -->
+  <%= yield %>
+</div>
