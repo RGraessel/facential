@@ -1,7 +1,7 @@
 class LessonProgressesController < ApplicationController
   before_action :set_lesson_progress, only: [:show, :edit, :update, :destroy]
   before_action :authorize
-  before_action :verify_ownership, only: [:show, :edit, :update, :destroy]
+  # before_action :verify_ownership, only: [:show, :edit, :update, :destroy]
 
   # GET /lesson_progresses
   # GET /lesson_progresses.json
