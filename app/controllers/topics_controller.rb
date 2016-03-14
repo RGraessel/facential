@@ -4,7 +4,8 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @issuing_checks_topics = Course.find(1).topics
+    @inside_course = Course.find(params[:course_id]) unless params[:course_id].nil?
+    @topics = @inside_course.topics
   end
 
   # GET /topics/1

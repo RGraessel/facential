@@ -6,7 +6,8 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all.where(user_id: current_user.id)
+    @inside_topic = Topic.find(params[:topic_id]) unless params[:topic_id].nil?
+    @lessons = @inside_topic.lessons
   end
 
   # GET /lessons/1

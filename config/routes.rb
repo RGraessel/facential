@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   resources :lesson_progresses
   resources :lessons
-  resources :topics
-  resources :courses
-  resources :users
+  resources :topics, :only => [:index, :show]
 
+  resources :users do
+  resources :courses do
+    resource :topics
+  end
+end
   # root 'users#index'
 
   get '/signup' => 'users#new'
@@ -24,7 +27,9 @@ Rails.application.routes.draw do
   # root 'users#show'
 
   get '/home' => 'users#index'
-
+  get '/courses/:course_id/topics' => 'topics#index'
+  get '/courses/:course_id/topics/:id' => 'topics#show'
+  get '/topics/:topic_id/lessons' => 'lessons#index'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

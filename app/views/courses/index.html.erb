@@ -10,6 +10,7 @@
 <div class="col-md-9 container" id="course_data_container">
   <div id="space_above_first_course_bubble"></div>
     <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-12">
       <ul>
         <% @courses.each do |course| %>
         <li id="course_progress"></li>
@@ -22,5 +23,7 @@
         <% end %>
       </ul>
       <%= yield %>
+    </div>
+    <!--  Closes col-md-12 -->
     </div>
 </div>
