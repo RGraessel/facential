@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   resources :lessons
   resources :topics, :only => [:index, :show]
 
+
   resources :users do
   resources :courses do
     resource :topics
   end
 end
-  # root 'users#index'
+
+  root 'users#index'
+
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'

@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  # before_action :authorize
   # before_action :verify_ownership, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons

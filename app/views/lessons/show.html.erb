@@ -1,24 +1,108 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-3" id="user_nav_partial">
+  <div><%= render :partial => '/commons/user_nav' %>
+    <% if current_user %>
+    Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
+    <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <% end %>
+  </div>
+</div>
+<div class="col-md-9 col-md-offset-3">
+  <div id="top_space_div">
+  </div>
+  <div id="available_lessons">
+    <nav id="nav_lessons">
+      <ul class="a_l_links">
+        <li class="lesson_circle">
+        </li>
+        <li class="lessons">
+          Lesson 1
+        </li>
+        <li class="lessons">
+          Lesson 2
+        </li>
+        <li class="lessons">
+          Lesson 3
+        </li>
+        <li class="lessons">
+          Lesson 4
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div id="video_boxes">
+    <div class="video_box1">
+    </div>
+    <div class="video_box2">
+    </div>
+    <div id="video_nav1">
+      <span>
+        <nav class="v_nav">
+          <ul class="v_n_links">
+            <li class="v_n_circle">
+            </li>
+            <li class="v_n_circle">
+            </li>
+          </nav>
+        </span>
+        <span>
+          <nav class="v_nav2">
+            <ul class="v_n_links">
+              <li class="v_n_circle">
+              </li>
+              <li class="v_n_circle">
+              </li>
+            </ul>
+          </nav>
+        </span>
+      </div>
+    </div>
+    <div id="lesson_script">
+      <div class="script">
+        This is a description of the lesson that is being viewed.
+      </div>
+      <div id="script_nav">
+        <nav class="s_nav">
+          <ul class="s_n_links">
+            <li class="s_n_circle">
+            </li>
+            <li class="s_n_circle">
+            </li>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Lesson name:</strong>
-  <%= @lesson.lesson_name %>
+<strong>Lesson name:</strong>
+<%= @lesson.lesson_name %>
 </p>
 
 <p>
-  <strong>Lesson description:</strong>
-  <%= @lesson.lesson_description %>
+<strong>Lesson description:</strong>
+<%= @lesson.lesson_description %>
 </p>
 
 <p>
-  <strong>Lesson objective:</strong>
-  <%= @lesson.lesson_objective %>
+<strong>Lesson objective:</strong>
+<%= @lesson.lesson_objective %>
 </p>
 
 <p>
-  <strong>Topic:</strong>
-  <%= @lesson.topic %>
+<strong>Topic:</strong>
+<%= @lesson.topic %>
 </p>
-
+-->
+<!-- <div class="bottom_links">
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>
+</div> -->
