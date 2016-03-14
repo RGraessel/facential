@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all.where(user_id: current_user.id)
+    @issuing_checks_topics = Course.find(1).topics
   end
 
   # GET /topics/1

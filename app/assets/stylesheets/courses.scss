@@ -1,3 +1,22 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#course_data_container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  background-color: #EFEFEF;
+  height: 100vh;
+  text-align: center;
+}
+
+#course_progress {
+  border-radius: 50%;
+  background: #A8A8A8;
+  height: 50px;
+  width: 50px;
+}
+
+#space_above_first_course_bubble {
+  height: 10vh;
+}

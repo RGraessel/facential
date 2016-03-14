@@ -1,29 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Topics</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Topic name</th>
-      <th>Course</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.topic_name %></td>
-        <td><%= topic.course %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="col-md-3" id="user_nav_partial">
+  <div><%= render :partial => '/commons/topics_nav' %>
+    <% if current_user %>
+      Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
+    <% else %>
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Topic', new_topic_path %>
+  </div>
+</div>
+<div class="col-md-9 container" id="course_data_container">
+  <div id="space_above_first_course_bubble"></div>
+    <div class="col-md-10 col-md-offset-1">
+      <ul id="course_progress_topics">
+        <li id="course_progress_topics">
+        <% @issuing_checks_topics.each do |topic| %>
+        <li><%= topic.topic_name %><li>
+        <% end %>
+      </ul>
+      <%= yield %>
+    </div>
+</div>
