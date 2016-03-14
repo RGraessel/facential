@@ -7,23 +7,21 @@
     <% end %>
   </div>
 </div>
+
 <div class="col-md-9 container" id="course_data_container">
   <div id="space_above_first_course_bubble"></div>
     <div class="col-md-10 col-md-offset-1">
-      <div class="col-md-12">
-      <ul>
-        <% @courses.each do |course| %>
-        <li id="course_progress"></li>
-        <li id="course_name"><%= course.course_name.capitalize %></li>
-        <li class="progress" id="progress_bar">
-          <span class="progress-bar progress-bar-success" style="width:50%">
-          </span>
-        </li>
-        </li>
-        <% end %>
-      </ul>
-      <%= yield %>
-    </div>
+      <% @courses.each do |course| %>
+      <div class="col-md-12" id="course_name"><%= course.course_name.capitalize %></div>
+        <div class="col-md-12 progress_block">
+          <div class="col-md-2" id="course_progress"></div>
+          <div class="col-md-10 progress" id="progress_bar">
+            <span class="progress-bar progress-bar-success" style="width:50%"></span>
+          </div>
+        </div>
+      <% end %>
+
+        <%= yield %>
     <!--  Closes col-md-12 -->
     </div>
 </div>

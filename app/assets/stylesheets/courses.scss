@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #course_data_container {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -19,4 +20,15 @@
 
 #space_above_first_course_bubble {
   height: 10vh;
+}
+
+.progress_block {
+  display: flex;
+  align-items: center;
+  padding-bottom: 7vh;
+}
+
+.progress_block .progress {
+  margin-bottom: 0px;
+  border-radius: 0px;
 }
