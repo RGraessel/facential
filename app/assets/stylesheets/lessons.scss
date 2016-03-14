@@ -1,3 +1,125 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#nav_lessons{
+  display: inline-block;
+  // margin-left: 10vw;
+
+}
+
+.a_l_links{
+
+}
+
+.lesson_circle{
+  border-radius: 50%;
+  background: #A8A8A8;
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-left: 5vw;
+}
+
+.lessons{
+  padding-top: 3vw;
+  padding-right: 2vw;
+  padding-left: 1vw;
+  float: left;
+}
+
+#video_boxes{
+
+}
+
+.video_box1{
+  border: 6px solid gray;
+  background-color: black;
+  border-radius: 5%;
+  height:20vw;
+  width: 30vw;
+  float: left;
+  margin-left: 5vw;
+  margin-top: 7vw;
+}
+
+.video_box2{
+  border: 4px solid gray;
+  background-color: black;
+  height:20vw;
+  width: 30vw;
+  float: left;
+  margin-left: 5vw;
+  margin-top: 7vw;
+  clear: right;
+}
+
+#video_nav1{
+  display: inline-block;
+  width: auto;
+}
+
+.v_nav{
+  // display: inline-block;
+  float: left;
+  margin-top: 1vw;
+  margin-left: 5vw;
+}
+
+.v_nav2{
+  // display: inline-block;
+  float: left;
+  margin-top: 1vw;
+  margin-left: 10vw;
+  clear: right;
+}
+
+
+
+.v_n_circle{
+  border-radius: 50%;
+  background: #A8A8A8;
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-left: 5vw;
+}
+
+.script{
+  border-top: 4px solid gray;
+  border-bottom: 4px solid gray;
+  height:20vw;
+  width: 30vw;
+  float: left;
+  clear: right;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 23vw;
+  margin-top: 7vw;
+  font-size: 13px;
+  color: black;
+  text-align: center;
+}
+
+#script_nav{
+  display: inline-block;
+}
+
+.s_nav{
+  // display: inline-block;
+  float: left;
+  margin-top: 1vw;
+  margin-left: 52vw;
+  clear: right;
+}
+
+
+.s_n_circle{
+  border-radius: 50%;
+  background: #A8A8A8;
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-left: 5vw;
+}

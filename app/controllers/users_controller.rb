@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  # before_action :authorize
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.where(user_id: current_user.id)
+    @users = User.all
   end
 
   # GET /users/1
