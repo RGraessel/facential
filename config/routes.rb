@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :users do
   resources :courses do
-    resource :topics
+    resource :topics do
+      resource :lessons
+    end
   end
 end
 
@@ -32,7 +34,8 @@ end
   get '/home' => 'users#index'
   get '/courses/:course_id/topics' => 'topics#index'
   get '/courses/:course_id/topics/:id' => 'topics#show'
-  get '/topics/:topic_id/lessons' => 'lessons#index'
+  get '/courses/:course_id/topics/:topic_id/lessons' => 'lessons#index'
+  get '/courses/:course_id/topics/:topic_id/lessons/:lesson_id' => 'lessons#show'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

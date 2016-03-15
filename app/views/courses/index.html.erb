@@ -1,4 +1,4 @@
-<div class="col-md-3" id="user_nav_partial">
+<div class="col-md-2" id="user_nav_partial">
   <div><%= render :partial => '/commons/courses_nav' %>
     <% if current_user %>
       Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="col-md-9 container" id="course_data_container">
+<div class="col-md-10 container" id="course_data_container">
   <div id="space_above_first_course_bubble"></div>
     <div class="col-md-10 col-md-offset-1">
       <% @courses.each do |course| %>
@@ -20,9 +20,7 @@
           </div>
         </div>
       <% end %>
-
-        <%= yield %>
+      <%= yield %>
     <!--  Closes col-md-12 -->
-
   </div>
 </div>

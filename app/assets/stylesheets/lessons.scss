@@ -3,10 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#space_above_first_course_bubble {
+  height: 10vh;
+}
+
+
+
+
+div .progress_block {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0vh;
+  background-color: #FAFAFA;
+  height: 54px;
+  border-bottom-left-radius: 32px;
+  border-top-left-radius: 32px;
+  padding-left: 2px;
+  margin-bottom: 20px;
+}
+
+.progress_block .progress {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+div .progress {
+  height: 10px;
+}
+
 #nav_lessons{
   display: inline-block;
   // margin-left: 10vw;
-
 }
 
 .a_l_links{

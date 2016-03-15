@@ -1,4 +1,4 @@
-<div class="col-md-3" id="user_nav_partial">
+<div class="col-md-2" id="user_nav_partial">
   <div><%= render :partial => '/commons/lessons_nav' %>
     <% if current_user %>
       Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
@@ -7,15 +7,19 @@
     <% end %>
   </div>
 </div>
-<div class="col-md-9 container">
+<div class="col-md-10 container">
   <div id="space_above_first_course_bubble"></div>
     <div class="col-md-10 col-md-offset-1">
-      <ul id="course_progress_topics">
-        <li id="topic_progress">
-        <% @lessons.each do |lesson| %>
-        <li><%= lesson.lesson_name %><li>
-        <% end %>
-      </ul>
+      <% @lessons.each do |lesson| %>
+      <div class="col-md-12" id="course_name"><%= lesson.lesson_name.capitalize %></div>
+        <div class="col-md-12 progress_block w3-hover-shadow" id="wrapper">
+          <div class="col-md-2" id="course_progress"></div>
+          <div class="col-md-12 progress" id="progress_bar">
+            <span class="progress-bar progress-bar-success" style="width:50%"></span>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
+      <!--  Closes col-md-12 -->
     </div>
 </div>
