@@ -11,21 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312024333) do
+ActiveRecord::Schema.define(version: 20160314231222) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
-  create_table "courses_users", id: false, force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "user_id"
-  end
-
-  add_index "courses_users", ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id"
-  add_index "courses_users", ["user_id"], name: "index_courses_users_on_user_id"
+  add_index "courses", ["user_id"], name: "index_courses_on_user_id"
 
   create_table "lesson_progresses", force: :cascade do |t|
     t.integer  "lesson_id"
@@ -82,6 +77,9 @@ ActiveRecord::Schema.define(version: 20160312024333) do
     t.string   "user_role"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "course_id"
   end
+
+  add_index "users", ["course_id"], name: "index_users_on_course_id"
 
 end
