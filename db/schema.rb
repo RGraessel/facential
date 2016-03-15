@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20160314231222) do
 
   add_index "courses", ["user_id"], name: "index_courses_on_user_id"
 
+  create_table "courses_users", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "user_id"
+  end
+
+  add_index "courses_users", ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id"
+  add_index "courses_users", ["user_id"], name: "index_courses_users_on_user_id"
+
   create_table "lesson_progresses", force: :cascade do |t|
     t.integer  "lesson_id"
     t.integer  "user_id"

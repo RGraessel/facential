@@ -9,6 +9,7 @@
   background-color: #EFEFEF;
   height: 100vh;
   text-align: center;
+
 }
 
 #course_progress {
@@ -22,13 +23,28 @@
   height: 10vh;
 }
 
-.progress_block {
+div .progress_block {
   display: flex;
   align-items: center;
-  padding-bottom: 7vh;
+  padding-bottom: 0vh;
+  background-color: #FAFAFA;
+  height: 54px;
+  border-bottom-left-radius: 32px;
+  border-top-left-radius: 32px;
+  padding-left: 2px;
+  margin-bottom: 20px;
 }
 
 .progress_block .progress {
   margin-bottom: 0px;
   border-radius: 0px;
+}
+
+div .progress {
+  height: 10px;
+  padding-left: 0vw;
+}
+
+div .progress_block .w3-hover-shadow {
+  background-color: #616161 !important;
 }
