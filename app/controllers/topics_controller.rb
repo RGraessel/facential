@@ -6,11 +6,13 @@ class TopicsController < ApplicationController
   def index
     @inside_course = Course.find(params[:course_id]) unless params[:course_id].nil?
     @topics = @inside_course.topics
+    @course = Course.find(params[:course_id])
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @course = Course.find(params[:course_id])
   end
 
   # GET /topics/new
@@ -67,6 +69,11 @@ class TopicsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
       @topic = Topic.find(params[:id])
+    end
+
+    def validator
+      if current_user.courses.include? Course.find(params[:course_id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

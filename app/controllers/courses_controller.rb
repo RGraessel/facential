@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = current_user.courses   
+    @courses = current_user.courses
   end
 
   # GET /courses/1
@@ -75,8 +75,8 @@ class CoursesController < ApplicationController
     end
 
     def verify_ownership
-      if current_user.id != @course.user_id
-        redirect_to courses_url
+      if current_user.id != @course
+        redirect_to user_courses_url
       end
     end
 end

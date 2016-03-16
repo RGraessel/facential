@@ -1,13 +1,6 @@
-<div class="col-md-3" id="user_nav_partial">
-  <div><%= render :partial => '/commons/user_nav' %>
-    <% if current_user %>
-    Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
-  </div>
-</div>
-<div class="col-md-9 col-md-offset-3">
+<!-- lesson - add attr saves youtube embed code or id
+lesson progress - recording url, feedback, marked as complete -->
+<div class="col-md-10 col-md-offset-3">
   <div id="top_space_div">
   </div>
   <div id="available_lessons">
@@ -101,8 +94,8 @@
 <strong>Topic:</strong>
 <%= @lesson.topic %>
 </p>
--->
-<!-- <div class="bottom_links">
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+
+<div class="bottom_links">
+<%= link_to 'Edit', edit_user_course_topic_lesson_path(current_user.id, @course, @topic, @lesson.id) %> |
+<%= link_to 'Back', user_course_topic_lessons_path %>
 </div> -->

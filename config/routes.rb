@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   resources :lesson_progresses
-  resources :lessons
-  resources :topics, :only => [:index, :show]
+  # resources :lessons
+  # resources :topics, :only => [:index, :show]
 
 
   resources :users do
   resources :courses do
-    resource :topics
+    resources :topics do
+      resources :lessons
+    end
   end
 end
 
@@ -29,10 +31,11 @@ end
   # Example of regular route:
   # root 'users#show'
 
-  get '/home' => 'users#index'
-  get '/courses/:course_id/topics' => 'topics#index'
-  get '/courses/:course_id/topics/:id' => 'topics#show'
-  get '/topics/:topic_id/lessons' => 'lessons#index'
+  # get '/home' => 'users#index'
+  # get '/courses/:course_id/topics' => 'topics#index'
+  # get '/courses/:course_id/topics/:id' => 'topics#show'
+  # get '/courses/:course_id/topics/:topic_id/lessons' => 'lessons#index'
+  # get '/courses/:course_id/topics/:topic_id/lessons/:lesson_id' => 'lessons#show'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

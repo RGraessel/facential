@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  # before_action :authorize
+  before_action :authorize
   # before_action :verify_ownership, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons
@@ -8,11 +8,15 @@ class LessonsController < ApplicationController
   def index
     @inside_topic = Topic.find(params[:topic_id]) unless params[:topic_id].nil?
     @lessons = @inside_topic.lessons
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   # GET /lessons/new

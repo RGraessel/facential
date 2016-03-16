@@ -4,7 +4,8 @@
   background-color: #DBDBDB;
   height: 100vh;
   text-align: center;
-}
+  position: fixed;
+ }
 
 #full_user_nav {
   height: 96vh;
@@ -27,7 +28,7 @@
 }
 
 #full_user_name {
-  font-size: 22px;
+  font-size: 19px;
 }
 
 #after_username_space_div {
@@ -40,7 +41,7 @@
   height: 50px;
   width: 50px;
   float: left;
-  margin-left: 5vw;
+  margin-left: 3vw;
 }
 
 #pending_total{
@@ -49,7 +50,7 @@
   height: 50px;
   width: 50px;
   float: right;
-  margin-right: 5vw;
+  margin-right: 3vw;
 }
 
 
@@ -69,6 +70,6 @@
 }
 
 .list-group .list-group-item:last-child {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

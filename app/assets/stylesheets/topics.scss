@@ -24,13 +24,23 @@ ul #course_progress_topics {
   height: 10vh;
 }
 
-.progress_block {
+div .progress_block {
   display: flex;
   align-items: center;
-  padding-bottom: 7vh;
+  padding-bottom: 0vh;
+  background-color: #FAFAFA;
+  height: 54px;
+  border-bottom-left-radius: 32px;
+  border-top-left-radius: 32px;
+  padding-left: 2px;
+  margin-bottom: 20px;
 }
 
 .progress_block .progress {
   margin-bottom: 0px;
   border-radius: 0px;
+}
+
+div .progress {
+  height: 10px;
 }
