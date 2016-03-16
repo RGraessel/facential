@@ -1,3 +1,8 @@
+require "opentok"
+OPENTOK_KEY = ENV["tok_box_api_key"]
+OPENTOK_SECRET = ENV["tok_box_secret"]
+
+
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   # before_action :authorize
@@ -6,7 +11,6 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @current_user = current_user
     @inside_topic = Topic.find(params[:topic_id]) unless params[:topic_id].nil?
     @lessons = @inside_topic.lessons
   end
@@ -14,8 +18,21 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-    @inside_topic = Topic.find(params[:topic_id]) unless params[:topic_id].nil?
-    @lessons = @inside_topic.lesson.find(params[:lesson_id])
+    @course = Course.find(params[:course_id])
+    @topic = Topic.find(params[:topic_id])
+  end
+
+  def session_action
+    @opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
+    @session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
+    session_id = @session.session_id
+    token = @opentok.generate_token session_id
+
+    render json: {
+      :api_key => OPENTOK_KEY,
+      :session_id => session_id,
+      :token => token
+    }
   end
 
   # GET /lessons/new

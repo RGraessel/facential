@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   resources :lesson_progresses
-  resources :lessons
-  resources :topics, :only => [:index, :show]
 
 
   resources :users do
   resources :courses do
-    resource :topics do
-      resource :lessons
+    resources :topics do
+      resources :lessons
     end
   end
 end
@@ -22,6 +20,11 @@ end
   post '/login' => 'sessions#create'
   # post '/login' => 'users#show'
   get '/logout' => 'sessions#destroy'
+
+  get '/session' => 'lessons#session_action'
+  get '/start' => 'lessons#show'
+  get '/stop' => 'lessons#show'
+  get '/view' => 'lessons#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -31,11 +34,6 @@ end
   # Example of regular route:
   # root 'users#show'
 
-  get '/home' => 'users#index'
-  get '/courses/:course_id/topics' => 'topics#index'
-  get '/courses/:course_id/topics/:id' => 'topics#show'
-  get '/courses/:course_id/topics/:topic_id/lessons' => 'lessons#index'
-  get '/courses/:course_id/topics/:topic_id/lessons/:lesson_id' => 'lessons#show'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
