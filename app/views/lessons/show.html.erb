@@ -1,8 +1,27 @@
+
 <!-- lesson - add attr saves youtube embed code or id
 lesson progress - recording url, feedback, marked as complete -->
+
 <div class="col-md-10 col-md-offset-3">
-  <div id="top_space_div">
+
+
+      <div id="videos">
+          <div id="subscriber"></div>
+          <div id="publisher"></div>
+      </div>
+      <div id="buttonholder">
+         <div id="buttons">
+              <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-danger">Start Archive</button>
+              <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-danger">Stop Archive</button>
+              <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-danger" disabled>View Archive</button>
+         </div>
+      </div>
+
+
+
+  <!-- <div id="top_space_div">
   </div>
+  <div><%= @opentok %></div>
   <div id="available_lessons">
     <nav id="nav_lessons">
       <ul class="a_l_links">
@@ -65,7 +84,7 @@ lesson progress - recording url, feedback, marked as complete -->
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 
@@ -95,7 +114,10 @@ lesson progress - recording url, feedback, marked as complete -->
 <%= @lesson.topic %>
 </p>
 
+
 <div class="bottom_links">
+-->
+<!-- <div class="bottom_links">
 <%= link_to 'Edit', edit_user_course_topic_lesson_path(current_user.id, @course, @topic, @lesson.id) %> |
 <%= link_to 'Back', user_course_topic_lessons_path %>
 </div> -->

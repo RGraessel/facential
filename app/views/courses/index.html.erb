@@ -2,13 +2,13 @@
   <div id="space_above_first_course_bubble"></div>
     <div class="col-md-10 col-md-offset-1">
       <% @courses.each do |course| %>
-      <div class="col-md-12" id="course_name"><%= course.course_name.capitalize %></div>
         <div class="col-md-12 progress_block w3-hover-shadow" id="wrapper">
           <div class="col-md-2" id="course_progress"></div>
           <div class="col-md-12 progress" id="progress_bar">
             <span class="progress-bar progress-bar-success" style="width:50%"></span>
           </div>
         </div>
+        <div class="col-md-12" id="course_name"><%= course.course_name.capitalize %></div>
       <% end %>
       <%= yield %>
     <!--  Closes col-md-12 -->
