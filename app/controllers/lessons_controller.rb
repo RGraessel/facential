@@ -25,54 +25,53 @@ class LessonsController < ApplicationController
   end
 
   def session_action
-    @opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
-    @session = @opentok.create_session :media_mode => :routed
+    opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
+    @session = opentok.create_session :media_mode => :routed
     session_id = @session.session_id
-    token = @opentok.generate_token session_id
+    token = opentok.generate_token session_id
 
     render json: {
       :api_key => OPENTOK_KEY,
       :session_id => session_id,
       :token => token
-    }.to_json,
-    :headers => { "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}" }
+    }.to_json
 
   end
 
   def start_recording
+    opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
     session_id = params[:session_id]
+    archive = opentok.archives.create session_id, :name => "Important Presentation"
+    current_lesson = Lesson.find(params[:lesson_id])
 
-    start_recording_lesson = HTTParty.post(
-    "https://api.opentok.com/v2/partner/#{OPENTOK_KEY}/archive",
-    :body => { :sessionId => session_id,
-      :hasAudio => true,
-      :hasVideo => true,
-      :name => "archive_name",
-      :outputMode => "composed",
-    }.to_json,
-    :headers => {
-      "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}",
-      "Content-Type" => "application/json"
-    })
+    user_response = LessonResponse.new(
+      lesson: current_lesson,
+      user: current_user,
+      archive_id: archive.id,
+      session_id: session_id,
+    )
 
-    archive_id = start_recording_lesson["id"]
-    Lesson.find(params[:lesson_id])
+    if user_response.save
+      render json: {id: archive.id}
+    else
+      render json: {id: 'UNKNOWN'}
+    end
   end
 
   def stop_recording
+    opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
     archive_id = params[:archive_id]
-    @stop_recording_lesson = HTTParty.post(
-    "https://api.opentok.com/v2/partner/#{OPENTOK_KEY}/archive/#{archive_id}/stop",
-    :headers => { "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}" })
-
-    archive_id = @archive_id
+    opentok.archives.stop_by_id archive_id
+    render json: {id: archive_id}
   end
 
   def view_archived_video
-    @lesson_record = HTTParty.get(
-      "https://api.opentok.com/v2/partner/#{OPENTOK_KEY}/archive/f9d05404-204f-47aa-904e-0527b69a979c",
-      :headers => { "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}" })
-
+    sleep 2
+    opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
+    archive_id = params[:archive_id]
+    archive = opentok.archives.find archive_id
+    redirect_to archive.url
+    # render json: {id: archive_id}
   end
 
   # GET /lessons/new

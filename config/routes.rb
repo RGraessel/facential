@@ -23,8 +23,8 @@ end
 
   get '/session' => 'lessons#session_action'
   post '/start/:session_id/:lesson_id' => 'lessons#start_recording'
-  get '/stop/:archive_id' => 'lessons#stop_recording'
-  get '/view' => 'lessons#view_archived_video'
+  post '/stop/:archive_id' => 'lessons#stop_recording'
+  get '/view/:archive_id' => 'lessons#view_archived_video'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
