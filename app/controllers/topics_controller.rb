@@ -4,9 +4,9 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @inside_course = Course.find(params[:course_id]) unless params[:course_id].nil?
-    @topics = @inside_course.topics
-    @course = Course.find(params[:course_id])
+    @topics = current_user.topics
+    @courses = current_user.courses
+    @users = current_user.id
   end
 
   # GET /topics/1

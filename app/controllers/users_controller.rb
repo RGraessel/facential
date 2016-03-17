@@ -5,11 +5,17 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @topics = current_user.topics
+    @lessons = current_user.lessons
+    @courses = current_user.courses
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @topics = current_user.topics
+    @lessons = current_user.lessons
+    @courses = current_user.courses
   end
 
   # GET /users/new

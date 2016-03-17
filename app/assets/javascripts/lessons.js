@@ -25,7 +25,6 @@ function initializeSession() {
   if(!window.location.pathname.match(/\/users\/[0-9]+\/courses\/[0-9]+\/topics\/[0-9]+\/lessons\/[0-9]+/)){
     return false;
   }
-
   var session = OT.initSession(apiKey, sessionId);
 
   // Subscribe to a newly created stream

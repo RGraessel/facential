@@ -2,7 +2,7 @@
   <div id="user_nav_top_section">
     <div class="" id="top_space_div"></div>
     <img class="circle" id="profile_picture"/>
-    <h1 id="full_user_name"><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h1>
+    <h1 id="full_user_name"><%#= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h1>
     <div class="" id="after_username_space_div"></div>
     <ul>
       <li id="completed_total"></li>
@@ -14,12 +14,14 @@
       <br>
       <div class="list-group">
         <a href="" class="list-group-item">Paths</a>
-        <a href="" class="list-group-item">Courses</a>
         <div class="list-group-item">
-          <%#=link_to 'Topics', user_course_topics_path(current_user.id, @course, @topic) %>
+          <%=link_to 'Courses', user_courses_path(current_user)%>
         </div>
         <div class="list-group-item">
-          <%#=link_to 'Lessons', user_course_topic_lessons_path(current_user.id, @course, @topic, @lesson) %>
+          <%=link_to 'Topics', user_course_topics_path(current_user, @courses)%>
+        </div>
+        <div class="list-group-item">
+          <%=link_to 'Lessons', user_course_topic_lessons_path(current_user, @courses, @topics) %>
         </div>
       </div>
     </div>
