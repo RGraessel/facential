@@ -54,8 +54,9 @@ class LessonsController < ApplicationController
       "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}",
       "Content-Type" => "application/json"
     })
-    byebug
 
+    archive_id = start_recording_lesson["id"]
+    Lesson.find(params[:lesson_id])
   end
 
   def stop_recording

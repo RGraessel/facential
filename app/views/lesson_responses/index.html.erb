@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lesson Responses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lesson_responses.each do |lesson_response| %>
+      <tr>
+        <td><%= lesson_response.lesson %></td>
+        <td><%= lesson_response.user %></td>
+        <td><%= link_to 'Show', lesson_response %></td>
+        <td><%= link_to 'Edit', edit_lesson_response_path(lesson_response) %></td>
+        <td><%= link_to 'Destroy', lesson_response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lesson response', new_lesson_response_path %>
