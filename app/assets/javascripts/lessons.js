@@ -22,7 +22,6 @@ $(document).ready(function() {
 });
 
 function initializeSession() {
-  console.log(apiKey);
   var session = OT.initSession(apiKey, sessionId);
 
   // Subscribe to a newly created stream

@@ -6,7 +6,8 @@ class TopicsController < ApplicationController
   def index
     @inside_course = Course.find(params[:course_id]) unless params[:course_id].nil?
     @topics = @inside_course.topics
-    @course = Course.find(params[:course_id])
+    @courses = Course.find(params[:course_id])
+    @users = current_user.id
   end
 
   # GET /topics/1

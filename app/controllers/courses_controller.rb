@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = current_user.courses
+    # @topics = Topic.find(params[:topic_id])
   end
 
   # GET /courses/1
