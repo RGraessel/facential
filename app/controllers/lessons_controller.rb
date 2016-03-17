@@ -11,17 +11,16 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @inside_topic = Topic.find(params[:topic_id]) unless params[:topic_id].nil?
-    @lessons = @inside_topic.lessons
-    @courses = Course.find(params[:course_id])
-    @topics = Topic.find(params[:topic_id])
+    @topics = current_user.topics
+    @lessons = current_user.lessons
+    @courses = current_user.courses
   end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
     @courses = Course.find(params[:course_id])
-    @topics = Topic.find(params[:topic_id])
+    @topics = current_user.topics
   end
 
   def session_action
