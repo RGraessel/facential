@@ -13,14 +13,16 @@
   <div class="col-md-1 progress_circle w3-hover-shadow" id="wrapper">
   </div>
   <% @lessons.each do |lesson| %>
+  <%= link_to user_course_topic_lesson_path(@courses, @topic, @lesson, current_user) do %>
   <div class="col-md-10 progress_block w3-hover-shadow" id="wrapper">
     <div class="col-md-10 progress" id="progress_bar">
       <span class="progress-bar progress-bar-success" style="width:50%"></span>
     </div>
   </div>
-  <a>
-  <div class="col-md-10" id="course_name"><% link_to lesson.lesson_name.capitalize, user_course_topic_lesson_path(current_user.id, @courses, @topics, @lessons) %></div>
-</a>
+  <% end %>
+  <%= link_to user_course_topic_lesson_path do %>
+  <div class="col-md-10" id="course_name"><%= lesson.lesson_name.capitalize %></div>
+  <% end %>
   <% end %>
   <%= yield %>
   <!--  Closes col-md-12 -->

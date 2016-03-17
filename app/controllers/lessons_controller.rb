@@ -1,3 +1,4 @@
+require "httparty"
 require "opentok"
 OPENTOK_KEY = ENV["tok_box_api_key"]
 OPENTOK_SECRET = ENV["tok_box_secret"]
@@ -20,12 +21,13 @@ class LessonsController < ApplicationController
   # GET /lessons/1.json
   def show
     @courses = Course.find(params[:course_id])
-    @topics = current_user.topics
+    @topic = Topics.find(params[:topic_id])
+    @lessons = Lesson.find(params[:id])
   end
 
   def session_action
     @opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
-    @session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
+    @session = @opentok.create_session :media_mode => :routed
     session_id = @session.session_id
     token = @opentok.generate_token session_id
 
@@ -33,7 +35,44 @@ class LessonsController < ApplicationController
       :api_key => OPENTOK_KEY,
       :session_id => session_id,
       :token => token
-    }
+    }.to_json,
+    :headers => { "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}" }
+
+  end
+
+  def start_recording
+    session_id = params[:session_id]
+
+    start_recording_lesson = HTTParty.post(
+    "https://api.opentok.com/v2/partner/#{OPENTOK_KEY}/archive",
+    :body => { :sessionId => session_id,
+      :hasAudio => true,
+      :hasVideo => true,
+      :name => "archive_name",
+      :outputMode => "composed",
+    }.to_json,
+    :headers => {
+      "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}",
+      "Content-Type" => "application/json"
+    })
+    byebug
+
+  end
+
+  def stop_recording
+    archive_id = params[:archive_id]
+    @stop_recording_lesson = HTTParty.post(
+    "https://api.opentok.com/v2/partner/#{OPENTOK_KEY}/archive/#{archive_id}/stop",
+    :headers => { "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}" })
+
+    archive_id = @archive_id
+  end
+
+  def view_archived_video
+    @lesson_record = HTTParty.get(
+      "https://api.opentok.com/v2/partner/#{OPENTOK_KEY}/archive/f9d05404-204f-47aa-904e-0527b69a979c",
+      :headers => { "X-TB-PARTNER-AUTH" => "#{OPENTOK_KEY}:#{OPENTOK_SECRET}" })
+
   end
 
   # GET /lessons/new

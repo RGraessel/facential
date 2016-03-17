@@ -171,6 +171,7 @@ DEPENDENCIES
   faker
   figaro
   hirb
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   opentok (~> 2.3)
