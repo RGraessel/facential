@@ -76,7 +76,8 @@ function initializeSession() {
 
 // Start recording
 function startArchive() {
-  $.post(SAMPLE_SERVER_BASE_URL + '/start/' + sessionId);
+  var lessonId = 1;
+  $.post(SAMPLE_SERVER_BASE_URL + '/start/' + sessionId + '/' + lessonId);
   $('#start').hide();
   $('#stop').show();
 }

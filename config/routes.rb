@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :lesson_progresses
+  resources :lesson_responses
 
 
   resources :users do
@@ -22,7 +22,7 @@ end
   get '/logout' => 'sessions#destroy'
 
   get '/session' => 'lessons#session_action'
-  post '/start/:session_id' => 'lessons#start_recording'
+  post '/start/:session_id/:lesson_id' => 'lessons#start_recording'
   get '/stop/:archive_id' => 'lessons#stop_recording'
   get '/view' => 'lessons#view_archived_video'
   # The priority is based upon order of creation: first created -> highest priority.
