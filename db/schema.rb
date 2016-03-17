@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315011557) do
+ActiveRecord::Schema.define(version: 20160317183625) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_name"
@@ -32,8 +32,14 @@ ActiveRecord::Schema.define(version: 20160315011557) do
   create_table "lesson_progresses", force: :cascade do |t|
     t.integer  "lesson_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "session_id"
+    t.string   "last_session_id"
+    t.string   "recording_url"
+    t.boolean  "marked_as_complete"
+    t.text     "feedback"
+    t.string   "archive_id"
   end
 
   add_index "lesson_progresses", ["lesson_id"], name: "index_lesson_progresses_on_lesson_id"

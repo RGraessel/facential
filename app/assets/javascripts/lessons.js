@@ -22,12 +22,16 @@ $(document).ready(function() {
 });
 
 function initializeSession() {
+  if(!window.location.pathname.match(/\/users\/[0-9]+\/courses\/[0-9]+\/topics\/[0-9]+\/lessons\/[0-9]+/)){
+    return false;
+  }
+
   var session = OT.initSession(apiKey, sessionId);
 
   // Subscribe to a newly created stream
   session.on('streamCreated', function(event) {
     session.subscribe(event.stream, 'subscriber', {
-      insertMode: 'append',
+      insertMode: 'replace',
       width: '100%',
       height: '100%'
     });
