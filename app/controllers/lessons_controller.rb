@@ -1,7 +1,7 @@
+require "httparty"
 require "opentok"
 OPENTOK_KEY = ENV["tok_box_api_key"]
 OPENTOK_SECRET = ENV["tok_box_secret"]
-
 
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
@@ -24,6 +24,10 @@ class LessonsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
   end
 
+  def archived_video
+    @session_record = HTTParty.get("https://api.opentok.com/v2/partner/#{'OPENTOK_KEY'}/archive/f9d05404-204f-47aa-904e-0527b69a979c")
+  end
+
   def session_action
     @opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
     @session = @opentok.create_session :archive_mode => :always, :media_mode => :routed
@@ -36,6 +40,8 @@ class LessonsController < ApplicationController
       :token => token
     }
   end
+
+
 
   # GET /lessons/new
   def new
