@@ -34,6 +34,7 @@ div .progress_circle {
   height: 54px;
   width: 54px;
   padding-left: 2px;
+  margin-right: 199px;
   margin-bottom: 20px;
   border-bottom-left-radius: 32px;
   border-top-left-radius: 32px;
@@ -179,4 +180,13 @@ div .progress_block .w3-hover-shadow {
 
 div #publisher {
   height: 700px;
+}
+
+#course_name{
+  text-align: center;
+}
+
+#progress_bar{
+  margin-left: 50px;
+  width: 93%;
 }
