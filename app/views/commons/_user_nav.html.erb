@@ -13,15 +13,16 @@
       </div>
       <br>
       <div class="list-group">
-        <a href="" class="list-group-item">Paths</a>
+        <%=link_to user_path(current_user) do%>
+        <div class="list-group-item">Paths</div>
+        <% end %>
         <%=link_to user_courses_path(current_user.id) do%>
         <div class="list-group-item">Courses</div>
         <% end %>
-        <!-- user_course_topics GET    /users/:user_id/courses/:course_id/topics -->
-        <%=link_to user_course_topics_path(current_user.id, @user_course ) do %>
+        <%=link_to user_course_topics_path(current_user.id, @user_course) do %>
         <div class="list-group-item">Topics</div>
         <% end %>
-        <%=link_to user_course_topic_lessons_path(current_user.id, @user_course, @user_topics, @lessons) do %>
+        <%=link_to user_course_topic_lessons_path(current_user.id, @user_course, @user_topics) do %>
         <div class="list-group-item">Lessons</div>
         <% end %>
       </div>
