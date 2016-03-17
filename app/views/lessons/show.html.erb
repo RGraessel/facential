@@ -3,20 +3,28 @@
 lesson progress - last session_id, recording url, feedback, marked as complete -->
 <script src="https://static.opentok.com/v2/js/opentok.js"></script>
 
+
+<div class="col-md-2" id="user_nav_partial">
+  <div><%= render :partial => '/commons/user_nav' %>
+    <% if current_user %>
+    Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
+    <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <% end %>
+  </div>
+</div>
 <div class="col-md-10 col-md-offset-3">
-
-
-      <div id="videos">
-          <div id="subscriber"></div>
-          <div id="publisher"></div>
-      </div>
-      <div id="buttonholder">
-         <div id="buttons">
-              <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-danger">Start Archive</button>
-              <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-danger">Stop Archive</button>
-              <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-danger" disabled>View Archive</button>
-         </div>
-      </div>
+  <div id="videos">
+    <div id="subscriber"></div>
+    <div id="publisher"></div>
+  </div>
+  <div id="buttonholder">
+    <div id="buttons">
+      <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-danger">Start Archive</button>
+      <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-danger">Stop Archive</button>
+      <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-danger" disabled>View Archive</button>
+    </div>
+  </div>
 
 
 
