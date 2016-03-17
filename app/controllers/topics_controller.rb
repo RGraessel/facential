@@ -7,6 +7,8 @@ class TopicsController < ApplicationController
     @topics = current_user.topics
     @courses = current_user.courses
     @users = current_user.id
+    @user_course = current_user.courses.each{|f| f}.first.id
+    @user_topics = current_user.topics.each{|f| f}.first.id
   end
 
   # GET /topics/1

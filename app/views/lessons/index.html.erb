@@ -13,14 +13,14 @@
   <div class="col-md-1 progress_circle w3-hover-shadow" id="wrapper">
   </div>
   <% @lessons.each do |lesson| %>
-  <%= link_to user_course_topic_lesson_path(@courses, @topic, @lesson, current_user) do %>
+  <%= link_to user_course_topic_lesson_path(current_user.id, lesson.topic.course, lesson.topic, lesson) do %>
   <div class="col-md-10 progress_block w3-hover-shadow" id="wrapper">
     <div class="col-md-10 progress" id="progress_bar">
       <span class="progress-bar progress-bar-success" style="width:50%"></span>
     </div>
   </div>
   <% end %>
-  <%= link_to user_course_topic_lesson_path do %>
+  <%= link_to user_course_topic_lesson_path(current_user.id, lesson.topic.course, lesson.topic, lesson) do %>
   <div class="col-md-10" id="course_name"><%= lesson.lesson_name.capitalize %></div>
   <% end %>
   <% end %>

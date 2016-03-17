@@ -15,14 +15,19 @@ class LessonsController < ApplicationController
     @topics = current_user.topics
     @lessons = current_user.lessons
     @courses = current_user.courses
+    @user_course = current_user.courses.each{|f| f}.first.id
+    @user_topics = current_user.topics.each{|f| f}.first.id
   end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
     @courses = Course.find(params[:course_id])
-    @topic = Topics.find(params[:topic_id])
+    @topics = Topic.find(params[:topic_id])
     @lessons = Lesson.find(params[:id])
+    @user_course = current_user.courses.each{|f| f}.first.id
+    @user_topics = current_user.topics.each{|f| f}.first.id
+
   end
 
   def session_action
