@@ -1,7 +1,9 @@
 <div id="full_user_nav">
   <div id="user_nav_top_section">
     <div class="" id="top_space_div"></div>
-    <img class="circle" id="profile_picture"/>
+    <div class="circle" id="profile_picture">
+    <%= image_tag @user.avatar.url(:thumb) %>
+  </div>
     <h1 id="full_user_name"><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h1>
     <div class="" id="after_username_space_div"></div>
     <ul>

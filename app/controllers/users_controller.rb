@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    @user = User.create( user_params )
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
@@ -52,11 +53,19 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    if @user.update(user_params)
+      flash[:success] = "Post updated."
+      redirect_to user_path(current_user)
+    else
+      flash.now[:alert] = "Update failed.  Please check the form."
+    end
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user.avatar = nil
+    @user.save
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -65,11 +74,20 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def has_attached_file
+
+    avatar_file_name
+    avatar_file_size
+    avatar_content_type
+    avatar_updated_at
+
+  end
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :phone, :user_role)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :phone, :user_role, :avatar)
   end
 end

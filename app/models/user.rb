@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
+  has_secure_password
+  validates :avatar, presence: true
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+
   has_and_belongs_to_many :courses
   has_many :lesson_responses
   has_many :topics, through: :courses
   has_many :lessons, through: :courses
-  has_secure_password
 
 has_and_belongs_to_many :students,
 class_name: "User",

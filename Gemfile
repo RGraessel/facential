@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "paperclip", "~> 4.3"
 gem 'httparty'
 gem 'figaro'
 gem 'opentok', '~> 2.3'
