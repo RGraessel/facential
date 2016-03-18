@@ -15,9 +15,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @topics = current_user.topics
-    @lessons = current_user.lessons
-    @courses = current_user.courses
+    @user_course = current_user.courses.each{|f| f}.first.id
+    @user_topics = current_user.topics.each{|f| f}.first.id
   end
 
   # GET /users/new

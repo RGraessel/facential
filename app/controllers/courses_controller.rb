@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   def show
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
-  end
+    end
 
   # GET /courses/new
   def new
