@@ -92,10 +92,43 @@ function stopArchive() {
 
 // Get the archive status. If it is  "available", download it. Otherwise, keep checking
 // every 5 secs until it is "available"
-function viewArchive() {
+function viewArchive(){
   $('#view').prop('disabled', true);
-  window.location = SAMPLE_SERVER_BASE_URL + '/view/' + archiveID;
+  $.ajax('/view?archive_id=' + archiveID)
+    .always(function(data) {
+    $('#videos').empty
+    $('#videos').html(
+      "<video autoplay controls id='video1' width='420'>" +
+      "  <source id='source' src='" + data.responseText + "' type='video/mp4'>" +
+      "  Your browser does not support HTML5 video. " +
+      "</video>"
+    );
+  });
 }
+
+
 
 $('#start').show();
 $('#view').hide();
+
+
+var myVideo = document.getElementById("video1");
+
+function playPause() {
+    if (myVideo.paused)
+        myVideo.play();
+    else
+        myVideo.pause();
+}
+
+function makeBig() {
+    myVideo.width = 560;
+}
+
+function makeSmall() {
+    myVideo.width = 320;
+}
+
+function makeNormal() {
+    myVideo.width = 420;
+}

@@ -76,8 +76,7 @@ class LessonsController < ApplicationController
     opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
     archive_id = params[:archive_id]
     archive = opentok.archives.find archive_id
-    redirect_to archive.url
-    # render json: {id: archive_id}
+    render json: archive.url
   end
 
   # GET /lessons/new
