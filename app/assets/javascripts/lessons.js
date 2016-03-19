@@ -7,7 +7,8 @@ var apiKey,
     archiveID;
 
 $(document).ready(function() {
-  $('#stop').hide();
+  $('#stop').show();
+  $('#stop').prop('disabled', true)
   archiveID = null;
 
   // Make an Ajax request to get the OpenTok API key, session ID, and token from the server
@@ -39,16 +40,18 @@ function initializeSession() {
   session.on('archiveStarted', function(event) {
     archiveID = event.id;
     console.log('Archive started ' + archiveID);
-    $('#stop').show();
-    $('#start').hide();
+    $('#stop').prop('disabled', false);
+    $('#start').prop('disabled', true);
+    $('#view').show();
   });
 
   session.on('archiveStopped', function(event) {
     archiveID = event.id;
     console.log('Archive stopped ' + archiveID);
-    $('#start').hide();
-    $('#stop').hide();
+    $('#start').prop('disabled', true);
+    $('#stop').prop('disabled', true);
     $('#view').show();
+
   });
 
   session.on('sessionDisconnected', function(event) {
@@ -63,8 +66,8 @@ function initializeSession() {
     if (!error) {
       var publisher = OT.initPublisher('publisher', {
         insertMode: 'append',
-        width: '400px',
-        height: '225px'
+        width: '460px',
+        height: '285px'
       });
 
       session.publish(publisher);
@@ -78,9 +81,10 @@ function initializeSession() {
 function startArchive() {
   var lessonId = 1;
   $.post(SAMPLE_SERVER_BASE_URL + '/start/' + sessionId + '/' + lessonId);
-  $('#start').hide();
+  $('#start').show();
   $('#stop').show();
 }
+
 
 // Stop recording
 function stopArchive() {
@@ -98,10 +102,12 @@ function viewArchive(){
     .always(function(data) {
     $('#videos').empty
     $('#videos').html(
-      "<video autoplay controls id='video1' width='420'>" +
+      "<div class='video-resize'>"+
+      "<video autoplay id='video1' width='400' height='313px'>" +
       "  <source id='source' src='" + data.responseText + "' type='video/mp4'>" +
       "  Your browser does not support HTML5 video. " +
-      "</video>"
+      "</video>" +
+      "</div>"
     );
   });
 }
@@ -110,24 +116,24 @@ $('#start').show();
 $('#view').hide();
 
 
-var myVideo = document.getElementById("video_box1");
-
-
-function playPause() {
-    if (myVideo.paused)
-        myVideo.play();
-    else
-        myVideo.pause();
-}
-
-function makeBig() {
-    myVideo.width = 560;
-}
-
-function makeSmall() {
-    myVideo.width = 320;
-}
-
-function makeNormal() {
-    myVideo.width = 420;
-}
+// var myVideo = document.getElementById("video_box1");
+//
+//
+// function playPause() {
+//     if (myVideo.paused)
+//         myVideo.play();
+//     else
+//         myVideo.pause();
+// }
+//
+// function makeBig() {
+//     myVideo.width = 560;
+// }
+//
+// function makeSmall() {
+//     myVideo.width = 320;
+// }
+//
+// function makeNormal() {
+//     myVideo.width = 420;
+// }
