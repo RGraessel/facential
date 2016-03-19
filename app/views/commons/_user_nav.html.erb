@@ -2,14 +2,16 @@
   <div id="user_nav_top_section">
     <div class="" id="top_space_div"></div>
     <div class="circle" id="profile_picture">
-    <%= image_tag @user.avatar.url(:thumb) %>
-  </div>
+      <%=link_to edit_user_path(current_user) do %>
+      <%= (image_tag current_user.avatar.url(:thumb), class:'profile_pic')%>
+      <% end %>
+    </div>
     <h1 id="full_user_name"><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h1>
     <div class="" id="after_username_space_div"></div>
     <ul>
       <li id="completed_total"></li>
       <li id="pending_total"></li>
-      <span id="completed_total_text">Something</li>
+      <span id="completed_total_text">Mastered</li>
         <span id="pending_total_text">pending</li>
         </ul>
       </div>

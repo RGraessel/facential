@@ -9,10 +9,7 @@
   User Role: <%= f.text_field :user_role %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
+  <% end %>
   <%= f.submit "Submit" %>
 
-<% end %>
-<%= form_for @user, url: users_path, html: { multipart: true } do |form| %>
-  <%= form.file_field :avatar %>
-<% end %>
 <%= link_to 'Back', users_path %>

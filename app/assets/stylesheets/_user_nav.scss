@@ -20,11 +20,12 @@
   height: 10vh;
 }
 
-.circle {
+.profile_pic{
   border-radius: 50%;
-  background: #A8A8A8;
-  height: 100px;
   width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #full_user_name {
@@ -56,12 +57,12 @@
 
 #completed_total_text {
   float:left;
-  margin-left: 4vw;
+  margin-left: 2.8vw;
 }
 
 #pending_total_text {
   float: right;
-  margin-left: 8vw;
+  margin-left: 5vw;
 }
 
 .list-group .list-group-item:first-child {

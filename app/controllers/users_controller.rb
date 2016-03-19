@@ -17,21 +17,28 @@ class UsersController < ApplicationController
   def show
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+    @avatar = User.limit(1).all
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @avatar = User.new
   end
 
   # GET /users/1/edit
   def edit
+     @avatar = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
-    @user = User.create( user_params )
+    if @avatar = User.create(user_params)
+      redirect_to user_path(current_user)
+    else
+      redirect_to edit_user_path(current_user)
+    end
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
@@ -53,12 +60,6 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-    if @user.update(user_params)
-      flash[:success] = "Post updated."
-      redirect_to user_path(current_user)
-    else
-      flash.now[:alert] = "Update failed.  Please check the form."
-    end
   end
 
   # DELETE /users/1
@@ -75,14 +76,14 @@ class UsersController < ApplicationController
 
   private
 
-  def has_attached_file
-
-    avatar_file_name
-    avatar_file_size
-    avatar_content_type
-    avatar_updated_at
-
-  end
+  # def has_attached_file
+  #
+  #   avatar_file_name
+  #   avatar_file_size
+  #   avatar_content_type
+  #   avatar_updated_at
+  #
+  # end
   def set_user
     @user = User.find(params[:id])
   end

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'simple_form', '~> 3.1.0'
 gem "paperclip", "~> 4.3"
 gem 'httparty'
 gem 'figaro'
