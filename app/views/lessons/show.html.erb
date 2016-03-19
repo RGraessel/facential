@@ -1,9 +1,4 @@
-
-<!-- lesson - add attr saves youtube embed code or id
-lesson response - last session_id, recording url, feedback, marked as complete -->
-<script src="https://static.opentok.com/v2/js/opentok.js"></script>
-
-
+<div class="col-md-12" id="universal_container">
 <div class="col-md-2" id="user_nav_partial">
   <div><%= render :partial => '/commons/user_nav' %>
     <% if current_user %>
@@ -13,126 +8,47 @@ lesson response - last session_id, recording url, feedback, marked as complete -
     <% end %>
   </div>
 </div>
-<div class="col-md-10 col-md-offset-3">
-  <div id="videos">
-    <div id="subscriber"></div>
-    <div id="publisher"></div>
-    <div id="publisher"></div>
+<div id="space_above_first_lesson_bubble"></div>
+<div class="col-md-9 col-md-offset-3" id="lesson_screen_section">
+  <div class="col-md-12">
+  <div class="col-md-1 progress_circle w3-hover-shadow" id="wrapper"></div>
+  <!-- <div class="col-md-10" id="course_name">course name</div> -->
+  <div class="col-md-10 progress_block w3-hover-shadow" id="available_lessons">
+      <div class="col-md-10 progress" id="progress_bar">
+        <div class="progress-bar progress-bar-success" style="width:50%"></div>
+      </div>
   </div>
-  <div id="buttonholder">
-    <div id="buttons">
-      <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-danger">Start Archive</button>
-      <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-danger">Stop Archive</button>
-      <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-danger" disabled>View Archive</button>
-    </div>
-  </div>
-
-<div id='videoHolder'>
-  <!-- <video autoplay controls id="video1" width="420">
-    <source id='source' src="" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video> -->
 </div>
 
-<!--  <div id="top_space_div">
+
+<div class="col-md-12">
+
+<div class="col-md-6">
+  <div class="embed-container">
+    <iframe src="//www.youtube.com/embed/B6-45rswo0o"></iframe>
   </div>
-  <div><%= @opentok %></div>
-  <div id="available_lessons">
-    <nav id="nav_lessons">
-      <ul class="a_l_links">
-        <li class="lesson_circle">
-        </li>
-        <li class="lessons">
-          Lesson 1
-        </li>
-        <li class="lessons">
-          Lesson 2
-        </li>
-        <li class="lessons">
-          Lesson 3
-        </li>
-        <li class="lessons">
-          Lesson 4
-        </li>
-      </ul>
-    </nav>
+</div>
+
+<div class="col-md-6" id="videos">
+  <div id="subscriber"></div>
+  <div id="publisher"></div>
+
+  <span id="buttons">
+    <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-danger">Start Recording</button>
+    <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-danger">Stop Recording</button>
+    <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-danger" disabled>View Submission</button>
+  </span>
+</div>
+
+
+
+
+
+</div> <!--closes col-md-12 of videos -->
+
+<div id="lesson_script">
+  <div class="script">
+    This is a description of the lesson that is being viewed.
   </div>
-  <div id="video_boxes">
-    <div class="video_box1">
-    </div>
-    <div class="video_box2">
-    </div>
-    <div id="video_nav1">
-      <span>
-        <nav class="v_nav">
-          <ul class="v_n_links">
-            <li class="v_n_circle">
-            </li>
-            <li class="v_n_circle">
-            </li>
-          </nav>
-        </span>
-        <span>
-          <nav class="v_nav2">
-            <ul class="v_n_links">
-              <li class="v_n_circle">
-              </li>
-              <li class="v_n_circle">
-              </li>
-            </ul>
-          </nav>
-        </span>
-      </div>
-    </div>
-    <div id="lesson_script">
-      <div class="script">
-        This is a description of the lesson that is being viewed.
-      </div>
-      <div id="script_nav">
-        <nav class="s_nav">
-          <ul class="s_n_links">
-            <li class="s_n_circle">
-            </li>
-            <li class="s_n_circle">
-            </li>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-
-
-
-<!-- <p id="notice"><%= notice %></p>
-
-<p>
-<strong>Lesson name:</strong>
-<%= @lesson.lesson_name %>
-</p>
-
-<p>
-<strong>Lesson description:</strong>
-<%= @lesson.lesson_description %>
-</p>
-
-<p>
-<strong>Lesson objective:</strong>
-<%= @lesson.lesson_objective %>
-</p>
-
-<p>
-<strong>Topic:</strong>
-<%= @lesson.topic %>
-</p>
-
-
-<div class="bottom_links">
--->
-<!-- <div class="bottom_links">
-<%#= link_to 'Edit', edit_user_course_topic_lesson_path(current_user.id, @courses, @topics, @lesson) %> |
-<%= link_to 'Back', user_course_topic_lessons_path %>
-</div> -->
+</div>
+</div>

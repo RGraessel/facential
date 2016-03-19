@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#universal_container {
+ padding-left: 0px;
+ padding-right: 0px;
+}
+
 #lessons_data_container {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -12,19 +17,9 @@
 }
 
 div#space_above_first_lesson_bubble {
-  height: 12vh;
+  height: 10vh;
 }
 
-div .progress_block {
-  display: flex;
-  align-items: center;
-  padding-bottom: 0vh;
-  background-color: #FAFAFA;
-  height: 54px;
-
-  padding-left: 2px;
-  margin-bottom: 20px;
-}
 
 div .progress_circle {
   border: 2px solid #FAFAFA;
@@ -34,7 +29,7 @@ div .progress_circle {
   height: 54px;
   width: 54px;
   padding-left: 2px;
-  margin-right: 199px;
+  margin-right: 0px;
   margin-bottom: 20px;
   border-bottom-left-radius: 32px;
   border-top-left-radius: 32px;
@@ -43,144 +38,28 @@ div .progress_circle {
 }
 
 
-
-.progress_block .progress {
-  margin-bottom: 0px;
-  border-radius: 0px;
-}
-
-div .progress {
-  height: 10px;
-  padding-left: 0vw;
-}
-
-div .progress_block .w3-hover-shadow {
-  background-color: #616161 !important;
-}
-
-#nav_lessons{
-  display: inline-block;
-  // margin-left: 10vw;
-}
-
-.a_l_links{
-
-}
-
-.lesson_circle{
-  border-radius: 50%;
-  background: #A8A8A8;
-  height: 100px;
-  width: 100px;
-  float: left;
-  margin-left: 5vw;
-}
-
-.lessons{
-  padding-top: 3vw;
-  padding-right: 2vw;
-  padding-left: 1vw;
-  float: left;
-}
-
-#video_boxes{
-
-}
-
-.video_box1{
-  border: 6px solid gray;
-  background-color: black;
-  border-radius: 5%;
-  height:20vw;
-  width: 30vw;
-  float: left;
-  margin-left: 5vw;
-  margin-top: 7vw;
-}
-
-.video_box2{
-  border: 4px solid gray;
-  background-color: black;
-  height:20vw;
-  width: 30vw;
-  float: left;
-  margin-left: 5vw;
-  margin-top: 7vw;
-  clear: right;
-}
-
-#video_nav1{
-  display: inline-block;
-  width: auto;
-}
-
-.v_nav{
-  // display: inline-block;
-  float: left;
-  margin-top: 1vw;
-  margin-left: 9vw;
-}
-
-.v_nav2{
-  // display: inline-block;
-  float: left;
-  margin-top: 1vw;
-  margin-left: 18vw;
-  clear: right;
-}
-
-
-
-.v_n_circle{
-  border-radius: 50%;
-  background: #A8A8A8;
-  height: 50px;
-  width: 50px;
-  float: left;
-  margin-left: 5vw;
-}
-
 .script{
-  border-top: 4px solid gray;
-  border-bottom: 4px solid gray;
-  height:20vw;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  height: 20vw;
   width: 30vw;
   float: left;
   clear: right;
   margin-left: auto;
   margin-right: auto;
   margin-left: 22vw;
-  margin-top: 7vw;
+  margin-top: 2vw;
   font-size: 20px;
   color: black;
   text-align: center;
 }
 
-#script_nav{
-  display: inline-block;
-}
-
-.s_nav{
-  // display: inline-block;
-  float: left;
-  margin-top: 1vw;
-  margin-left: 26vw;
-  clear: right;
-}
 
 
-.s_n_circle{
-  border-radius: 50%;
-  background: #A8A8A8;
-  height: 50px;
-  width: 50px;
-  float: left;
-  margin-left: 5vw;
-}
 
 div #publisher {
-  height: 20vw;
-  width: 30vw;
+  width: 400px;
+  height: 225px;
 }
 
 #course_name{
@@ -190,4 +69,26 @@ div #publisher {
 #progress_bar{
   margin-left: 50px;
   width: 50%;
+}
+
+div.col-md-10 .col-md-offset-3
+#lesson_screen_section {
+  padding-left: 0px;
+}
+
+.embed-container {
+  position: relative;
+  height: 205px;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  width: 400px;
+  height: 225px;
 }

@@ -63,8 +63,8 @@ function initializeSession() {
     if (!error) {
       var publisher = OT.initPublisher('publisher', {
         insertMode: 'append',
-        width: '100%',
-        height: '100%'
+        width: '400px',
+        height: '225px'
       });
 
       session.publish(publisher);
@@ -106,13 +106,12 @@ function viewArchive(){
   });
 }
 
-
-
 $('#start').show();
 $('#view').hide();
 
 
-var myVideo = document.getElementById("video1");
+var myVideo = document.getElementById("video_box1");
+
 
 function playPause() {
     if (myVideo.paused)
