@@ -17,20 +17,28 @@ class UsersController < ApplicationController
   def show
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+    @avatar = User.limit(1).all
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @avatar = User.new
   end
 
   # GET /users/1/edit
   def edit
+     @avatar = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
+    if @avatar = User.create(user_params)
+      redirect_to user_path(current_user)
+    else
+      redirect_to edit_user_path(current_user)
+    end
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
@@ -57,6 +65,8 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user.avatar = nil
+    @user.save
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -65,11 +75,20 @@ class UsersController < ApplicationController
   end
 
   private
+
+  # def has_attached_file
+  #
+  #   avatar_file_name
+  #   avatar_file_size
+  #   avatar_content_type
+  #   avatar_updated_at
+  #
+  # end
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :phone, :user_role)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :phone, :user_role, :avatar)
   end
 end

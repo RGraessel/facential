@@ -1,74 +1,74 @@
-#user_nav_partial {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  background-color: #DBDBDB;
-  height: 100vh;
-  text-align: center;
-}
-
-#full_user_nav {
-  height: 96vh;
-  text-align: center;
-}
-
-#user_nav_top_section {
-  height: 55vh;
-}
-
-#top_space_div {
-  height: 10vh;
-}
-
-.circle {
-  border-radius: 50%;
-  background: #A8A8A8;
-  height: 100px;
-  width: 100px;
-}
-
-#full_user_name {
-  font-size: 19px;
-}
-
-#after_username_space_div {
-  height: 6vh;
-}
-
-#completed_total{
-  border-radius: 50%;
-  background: #A8A8A8;
-  height: 50px;
-  width: 50px;
-  float: left;
-  margin-left: 3vw;
-}
-
-#pending_total{
-  border-radius: 50%;
-  background: #A8A8A8;
-  height: 50px;
-  width: 50px;
-  float: right;
-  margin-right: 3vw;
-}
-
-
-#completed_total_text {
-  float:left;
-  margin-left: 4vw;
-}
-
-#pending_total_text {
-  float: right;
-  margin-left: 8vw;
-}
-
-.list-group .list-group-item:first-child {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
-
-.list-group .list-group-item:last-child {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
+// #user_nav_partial {
+//   padding-left: 0px !important;
+//   padding-right: 0px !important;
+//   background-color: #DBDBDB;
+//   height: 100vh;
+//   text-align: center;
+// }
+//
+// #full_user_nav {
+//   height: 96vh;
+//   text-align: center;
+// }
+//
+// #user_nav_top_section {
+//   height: 55vh;
+// }
+//
+// #top_space_div {
+//   height: 10vh;
+// }
+//
+// .circle {
+//   border-radius: 50%;
+//   background: #A8A8A8;
+//   height: 100px;
+//   width: 100px;
+// }
+//
+// #full_user_name {
+//   font-size: 19px;
+// }
+//
+// #after_username_space_div {
+//   height: 6vh;
+// }
+//
+// #completed_total{
+//   border-radius: 50%;
+//   background: #A8A8A8;
+//   height: 50px;
+//   width: 50px;
+//   float: left;
+//   margin-left: 3vw;
+// }
+//
+// #pending_total{
+//   border-radius: 50%;
+//   background: #A8A8A8;
+//   height: 50px;
+//   width: 50px;
+//   float: right;
+//   margin-right: 3vw;
+// }
+//
+//
+// #completed_total_text {
+//   float:left;
+//   margin-left: 4vw;
+// }
+//
+// #pending_total_text {
+//   float: right;
+//   margin-left: 8vw;
+// }
+//
+// .list-group .list-group-item:first-child {
+//   border-top-left-radius: 0px;
+//   border-top-right-radius: 0px;
+// }
+//
+// .list-group .list-group-item:last-child {
+//   border-bottom-left-radius: 0px;
+//   border-bottom-right-radius: 0px;
+// }
