@@ -30,15 +30,18 @@
   <div class="col-md-6">
     <!-- <div class="col-md-12" id="playback_frame"> -->
       <div class="" id="videos">
-          <div class="video-resize">
+          <div id='publisherHolder' class="video-resize">
             <div id="publisher"></div>
+          </div>
+          <div id='replay' class='video-resize' hidden>
           </div>
       </div>
     <!-- </div> -->
-    <div id="buttons">
+    <div class="col-md-10" id="buttons">
       <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-info">Start Recording</button>
       <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-info">Stop Recording</button>
-      <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-info" disabled>View Submission</button>
+      <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-info">View Submission</button>
+      <!-- <button type="button" id="replay" onClick="javascript:viewArchive()" class="btn btn-info">Replay Session</button> -->
     </div>
   </div>
 
