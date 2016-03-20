@@ -79,6 +79,16 @@ class LessonsController < ApplicationController
     render json: archive.url
   end
 
+  def rerecord
+    archive = LessonResponse.find_by(archive_id: params[:archive_id])
+    archive.destroy
+    respond_to do |format|
+      format.json { render json: archive, status: :ok }
+    end
+    last_five = LessonResponse.last(5).reverse
+
+  end
+
   # GET /lessons/new
   def new
     @lesson = Lesson.new

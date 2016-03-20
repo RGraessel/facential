@@ -5,6 +5,7 @@
 #universal_container {
  padding-left: 0px;
  padding-right: 0px;
+ height: 100vh;
 }
 
 #lessons_data_container {
@@ -58,7 +59,7 @@ div .progress_circle {
 
 
 div #publisher {
-  width: 400px;
+  width: 500px;
   height: 225px;
 }
 
@@ -71,9 +72,9 @@ div #publisher {
   width: 50%;
 }
 
-div.col-md-10 .col-md-offset-3
-#lesson_screen_section {
+div.col-md-9.col-md-offset-3#lesson_screen_section {
   padding-left: 0px;
+  height: 90vh;
 }
 
 .embed-container {
@@ -91,4 +92,31 @@ div.col-md-10 .col-md-offset-3
 .embed-container embed {
   width: 400px;
   height: 225px;
+}
+
+
+
+.video-resize {
+  height: 225px;
+  width: 400px !important;
+  overflow: hidden;
+  height: 230px;
+  margin-bottom: 7PX;
+}
+
+div#buttons {
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 17px;
+}
+
+div#buttons .btn-info {
+  color: #fff;
+  background-color: #A8A8A8;
+  border: 0px;
+  border-radius: 0px;
+}
+
+div#buttons .btn {
+  padding: 3px 5px;
 }
