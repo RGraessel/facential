@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  # before_action :authorize
   # GET /users
   # GET /users.json
   def index
@@ -45,11 +45,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    if @avatar = User.create(user_params)
-      redirect_to user_path(current_user)
-    else
-      redirect_to edit_user_path(current_user)
-    end
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
