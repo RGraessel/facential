@@ -21,15 +21,15 @@
       <div class="list-group">
         <%=link_to user_path(current_user) do%>
         <div class="list-group-item">Paths</div>
-        <% end %>
+        <% end %></br>
         <%=link_to user_courses_path(current_user.id) do%>
         <div class="list-group-item">Courses</div>
-        <% end %>
+        <% end %></br>
         <%=link_to user_course_topics_path(current_user.id, @user_course) do %>
         <div class="list-group-item">Topics</div>
-        <% end %>
+        <% end %></br>
         <%=link_to user_course_topic_lessons_path(current_user.id, @user_course, @user_topics) do %>
         <div class="list-group-item">Lessons</div>
-        <% end %>
+        <% end %></br>
       </div>
     </div>

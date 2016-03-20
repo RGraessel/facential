@@ -10,6 +10,7 @@
 #full_user_nav {
   height: 96vh;
   text-align: center;
+  background-color: #DBDBDB;
 }
 
 #user_nav_top_section {
@@ -73,12 +74,33 @@
   border-bottom-right-radius: 0px;
 }
 
+div .list-group-item {
+  background-color: #DBDBDB;
+  border: 0px;
+}
+
+div .list-group-item:hover {
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  background-color: #E0E0E0;
+}
+
 input.btn {
   border-radius: 0px;
-  color: #121328;
 }
 
 div.col-md-12 #universal_container {
   padding-right: 0px;
   padding-left: 0px;
+}
+
+#user_nav_partial {
+  background-color: #DBDBDB;
+}
+
+div.col-md-9 #available_lessons:hover {
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
 }

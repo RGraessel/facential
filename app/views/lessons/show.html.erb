@@ -9,13 +9,16 @@
   </div>
 </div>
 <div id="space_above_first_lesson_bubble"></div>
-<div class="col-md-9 col-md-offset-3" id="lesson_screen_section">
-  <div class="col-md-12">
+
+<div class="col-md-10 col-md-offset-2" id="lesson_screen_section">
+  <div class="col-md-12 col-md-offset-1">
   <div class="col-md-1 progress_circle w3-hover-shadow" id="wrapper"></div>
+</div>
+<div class="col-md-12 col-md-offset-1">
   <!-- <div class="col-md-10" id="course_name">course name</div> -->
   <div class="col-md-9 progress_block w3-hover-shadow" id="available_lessons">
       <div class="col-md-10 progress" id="progress_bar">
-        <div class="progress-bar progress-bar-success" style="width:50%"></div>
+        <div class="progress-bar progress-bar-success" style="width:20%"></div>
       </div>
   </div>
 </div>
@@ -38,17 +41,23 @@
       </div>
     <!-- </div> -->
     <div class="col-md-10" id="buttons">
-      <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-info">Start Recording</button>
-      <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-info">Stop Recording</button>
-      <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-info">View Submission</button>
-      <button type="button" id="submit" onClick="javascript:startArchive()" class="btn btn-info">Submit</button>
+      <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-info"><i class="material-icons">videocam</i></button>
+      <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-info"><i class="material-icons">stop</i></button>
+      <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-info"><i class="material-icons">play_arrow</i></button>
+      <button type="button" id="submit" onClick="javascript:submitArchive()" class="btn btn-info"><i class="material-icons">input</i></button>
       <!-- <button type="button" id="replay" onClick="javascript:viewArchive()" class="btn btn-info">Replay Session</button> -->
     </div>
   </div>
 
-  <div id="lesson_script">
-    <div class="script">
-      This is a description of the lesson that is being viewed.
+</div>
+
+  <div class="text_box_section">
+    <div id="lesson_script">
+      <div class="title">  Basic Beatbox Sounds </div>
+      <div class="script">
+        <p>This is a description of the lesson that is being viewed.</p>
+      </div>
     </div>
   </div>
+
 </div>

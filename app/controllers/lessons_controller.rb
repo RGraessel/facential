@@ -75,7 +75,10 @@ class LessonsController < ApplicationController
     sleep 2
     opentok = OpenTok::OpenTok.new OPENTOK_KEY, OPENTOK_SECRET
     archive_id = params[:archive_id]
+    current_lesson_response = LessonResponse.find_by(archive_id: archive_id)
     archive = opentok.archives.find archive_id
+    current_lesson_response.recording_url = archive.url
+
     render json: archive.url
   end
 
@@ -86,9 +89,17 @@ class LessonsController < ApplicationController
       format.json { render json: archive, status: :ok }
     end
     last_five = LessonResponse.last(5).reverse
-
   end
 
+  def submit
+    video_submission = LessonResponse.find_by(archive_id: params[:archive_id])
+
+    latest_submission = video_submission.update(marked_as_complete: true)
+
+byebug
+    redirect_to user_courses_path(current_user)
+
+  end
   # GET /lessons/new
   def new
     @lesson = Lesson.new

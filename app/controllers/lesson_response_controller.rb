@@ -83,7 +83,7 @@ class LessonResponseController < ApplicationController
     #     lc += 1
     #   end
     # end
-  end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

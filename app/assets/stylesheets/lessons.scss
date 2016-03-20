@@ -22,7 +22,7 @@ div#space_above_first_lesson_bubble {
 }
 
 
-div .progress_circle {
+div.progress_circle {
   border: 2px solid #FAFAFA;
   background-color: #A8A8A8;
   display: flex;
@@ -40,18 +40,17 @@ div .progress_circle {
 
 
 .script{
-  border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
-  height: 20vw;
+  font-family: rajdhani;
+  border-top: 2px solid #A8A8A8;
+  border-bottom: 2px solid #A8A8A8;
+  height: 12vw;
   width: 30vw;
-  float: left;
   clear: right;
   margin-left: auto;
   margin-right: auto;
-  margin-left: 22vw;
-  margin-top: 2vw;
-  font-size: 20px;
-  color: black;
+  margin-top: 2vh;
+  font-size: 16px;
+  color: #363636;
   text-align: center;
 }
 
@@ -69,9 +68,15 @@ div #publisher {
   width: 50%;
 }
 
-div.col-md-9.col-md-offset-3#lesson_screen_section {
-  padding-left: 0px;
+div.col-md-10 .col-md-offset-2 #lesson_screen_section {
+  padding-left: 500px;
   height: 90vh;
+}
+
+div.progress_block:hover {
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
 }
 
 .embed-container {
@@ -82,6 +87,7 @@ div.col-md-9.col-md-offset-3#lesson_screen_section {
   height: auto;
   padding-right: 0px;
   padding-left: 0px;
+  padding-left: 4vw;
 }
 
 .embed-container iframe,
@@ -90,8 +96,6 @@ div.col-md-9.col-md-offset-3#lesson_screen_section {
   width: 400px;
   height: 225px;
 }
-
-
 
 .video-resize {
   height: 225px;
@@ -109,9 +113,16 @@ div#buttons {
 
 div#buttons .btn-info {
   color: #fff;
-  background-color: #A8A8A8;
+  background:rgba(0,0,0,0);
   border: 0px;
   border-radius: 0px;
+}
+
+div#buttons .btn-info:hover {
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  background-color: #E0E0E0;
 }
 
 div#buttons .btn {
@@ -126,4 +137,21 @@ ul.nav>li>a {
 
 .btn .btn-default #submit_button {
   color: #666;
+}
+
+div.col-md-10 .material-icons {
+  font-size: 30px;
+}
+
+.title {
+  font-family: rajdhani;
+  text-align: center;
+}
+
+.script p {
+  margin-top: 2vh;
+}
+
+.text_box_section {
+  margin-top: 10vh;
 }
