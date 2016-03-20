@@ -13,6 +13,7 @@ $(document).ready(function() {
   $('#stop').prop('disabled', true)
   $('#view').show()
   $('#view').prop('disabled', true)
+  $('#submit').prop('disabled', true)
   archiveID = null;
 
   // Make an Ajax request to get the OpenTok API key, session ID, and token from the server
@@ -60,8 +61,9 @@ function initializeSession() {
     $('#stop').prop('disabled', true);
     $('#view').show();
     $('#view').prop('disabled', false);
+    $('#submit').prop('disabled', false);
     $('#start').empty
-    $('#start').html('Re-record')
+    $('#start').html('Re-record');
   });
 
   session.on('sessionDisconnected', function(event) {
