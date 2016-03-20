@@ -9,10 +9,12 @@
     <h1 id="full_user_name"><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></h1>
     <div class="" id="after_username_space_div"></div>
     <ul>
-      <li id="completed_total"></li>
-      <li id="pending_total"></li>
-      <span id="completed_total_text">Mastered</li>
-        <span id="pending_total_text">pending</li>
+      <li id="completed_total">
+      <div id="completed_total_text">Mastered</div>
+      </li>
+      <li id="pending_total">
+        <div id="pending_total_text">pending</div>
+        </li>
         </ul>
       </div>
       <br>

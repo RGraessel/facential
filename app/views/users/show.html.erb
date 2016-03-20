@@ -1,5 +1,4 @@
-<div class="col-md-12">
-
+<div class="col-md-12" id="universal_container">
 <div class="col-md-2" id="user_nav_partial">
   <div><%= render :partial => '/commons/user_nav' %>
     <% if current_user %>
@@ -9,8 +8,9 @@
     <% end %>
   </div>
 </div>
-<div class="col-md-9 container">
+<div class="col-md-10 container col-md-offset-2 ">
   <div class="col-md-10 progress_block w3-hover-shadow" id="available_lessons">
+<<<<<<< HEAD
 
     <div class="col-md-10 progress" id="progress_bar">
       <div class="progress-bar progress-bar-success" style="width: <%= 'lesson_completed / current_user.lessons' %>"></div>
@@ -19,6 +19,15 @@
 </div>
 
 </div>
+=======
+      <div class="col-md-10 progress" id="progress_bar">
+        <div class="progress-bar progress-bar-success" style= "width:  <%=(User.find(1).lesson_completed.count / User.find(1).lessons.count.to_f) * 100%>%"></div>
+      </div>
+  </div>
+</div>
+
+  <!-- The rest of the page goes here -->
+>>>>>>> rg_completion
 </div>
 
 <!-- <p>

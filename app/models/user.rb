@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, uniqueness: { case_sensitive: false }, confirmation: true, format: { with: VALID_EMAIL_REGEX}
   validates :email, length: { maximum: 100 }
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: true, length: { minimum: 4 }, allow_nil: true
   has_secure_password
 
 
@@ -30,6 +30,18 @@ class_name: "User",
 join_table: :managers,
 foreign_key: :user_id,
 association_foreign_key: :manager_user_id
+
+def lesson_completed
+  @completed = []
+  User.find(1).lessons.each do |lesson|
+    lesson.lesson_responses.each do |lr|
+      if lr.marked_as_complete = true && lr.user_id = User.find(1)
+        @completed << lesson
+      end
+    end
+    @completed
+  end
+end
 
 
 end
