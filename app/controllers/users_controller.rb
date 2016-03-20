@@ -19,17 +19,18 @@ class UsersController < ApplicationController
     @user_topics = current_user.topics.each{|f| f}.first.id
     @avatar = User.limit(1).all
 
-  def lesson_completed
-    @completed = []
-    current_user.lessons.each do |lesson|
-      lesson.lesson_responses.each do |lr|
-        if lr = true && lr.user_id = current_user.id
-          @completed << lesson
+
+    def lesson_completed
+      @completed = []
+      current_user.lessons.each do |lesson|
+        lesson.lesson_responses.each do |lr|
+          if lr = true && lr.user_id = current_user.id
+            @completed << lesson
+          end
         end
       end
-    end
       @completed
-    end  
+    end
   end
 
   # GET /users/new
