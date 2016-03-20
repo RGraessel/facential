@@ -63,7 +63,7 @@ function initializeSession() {
     $('#view').prop('disabled', false);
     $('#submit').prop('disabled', false);
     $('#start').empty
-    $('#start').html('Re-record');
+    $('#start').html("<i class='material-icons'>replay</i>");
     $('#submit').click('streamCreated');
   });
 
@@ -129,3 +129,9 @@ function viewArchive(){
     $('#replay').show();
   });
 }
+
+$(document).ready(function(){
+  $('.title').click(function(){
+    $('.script').slideToggle('slow')
+  });
+});

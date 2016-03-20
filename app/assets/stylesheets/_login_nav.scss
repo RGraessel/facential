@@ -1,8 +1,8 @@
 div.col-md-12 #user_nav_partial {
-  background-color: #26295D;
+  background-color: #DBDBDB;
 }
 
-#full_user_nav {
+#full_login_nav {
   height: 96vh;
   text-align: center;
 }
@@ -15,8 +15,6 @@ div.col-md-12 #user_nav_partial {
   height: 10vh;
 }
 
-
-
 #after_logo {
   height: 6vh;
 }
@@ -28,4 +26,18 @@ div.col-md-12 #user_nav_partial {
 
 ul.form-group li input {
   border-radius: 0px;
+}
+
+#full_login_nav {
+  background-color: #26295D;
+}
+
+#submit_button .btn-default {
+  color: #828282;
+  background-color: #fff;
+  border: 0px;
+}
+
+li .form-control {
+  border: 0px;
 }
