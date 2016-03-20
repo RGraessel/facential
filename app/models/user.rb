@@ -31,4 +31,5 @@ join_table: :managers,
 foreign_key: :user_id,
 association_foreign_key: :manager_user_id
 
+
 end

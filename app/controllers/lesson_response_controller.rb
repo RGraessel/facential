@@ -63,6 +63,28 @@ class LessonResponseController < ApplicationController
     end
   end
 
+  # def lesson_completed
+  #   @completed = []
+  #   current_user.lessons.each do |lesson|
+  #     lesson.lesson_responses.each do |lr|
+  #       if lr = true && lr.user_id = current_user.id
+  #         @completed << lesson
+  #       end
+  #       @completed
+  #     end
+  #   end
+
+    # @students_lessons = current_user.lessons
+    # @marked_complete_boolean = @students_lessons.lesson_responses.all.marked_as_complete
+    #
+    # lessons_completed = 0
+    # current_user.lessons.each do |lesson|
+    #   if current_user.lessons.complete = true
+    #     lc += 1
+    #   end
+    # end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson_response
