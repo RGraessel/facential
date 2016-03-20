@@ -64,6 +64,7 @@ function initializeSession() {
     $('#submit').prop('disabled', false);
     $('#start').empty
     $('#start').html('Re-record');
+    $('#submit').click('streamCreated');
   });
 
   session.on('sessionDisconnected', function(event) {

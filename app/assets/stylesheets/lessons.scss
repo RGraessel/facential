@@ -6,6 +6,7 @@
  padding-left: 0px;
  padding-right: 0px;
  height: 100vh;
+ background-color: #DBDBDB;
 }
 
 #lessons_data_container {
@@ -14,7 +15,6 @@
   background-color: #EFEFEF;
   height: 100vh;
   text-align: center;
-
 }
 
 div#space_above_first_lesson_bubble {
@@ -54,9 +54,6 @@ div .progress_circle {
   color: black;
   text-align: center;
 }
-
-
-
 
 div #publisher {
   width: 500px;
@@ -119,4 +116,10 @@ div#buttons .btn-info {
 
 div#buttons .btn {
   padding: 3px 5px;
+}
+
+ul.nav>li>a {
+  border-radius: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
