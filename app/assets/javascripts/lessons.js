@@ -1,14 +1,14 @@
-var SAMPLE_SERVER_BASE_URL = 'http://localhost:3000';
+  var SAMPLE_SERVER_BASE_URL = 'http://localhost:3000';
 
-var isReRecord = false;
+  var isReRecord = false;
 
-var apiKey,
-    sessionId,
-    token,
-    status,
-    archiveID;
+  var apiKey,
+      sessionId,
+      token,
+      status,
+      archiveID;
 
-$(document).ready(function() {
+  $(document).ready(function() {
   $('#stop').show();
   $('#stop').prop('disabled', true)
   $('#view').show()
@@ -109,6 +109,10 @@ function stopArchive() {
   console.log('stoppedrecording!')
 }
 
+
+function submitArchive(){
+  window.location = SAMPLE_SERVER_BASE_URL + '/submit/?archive_id=' + archiveID
+}
 // Get the archive status. If it is  "available", download it. Otherwise, keep checking
 // every 5 secs until it is "available"
 function viewArchive(){
@@ -129,6 +133,7 @@ function viewArchive(){
     $('#replay').show();
   });
 }
+
 
 $(document).ready(function(){
   $('.title').click(function(){
