@@ -31,17 +31,16 @@ join_table: :managers,
 foreign_key: :user_id,
 association_foreign_key: :manager_user_id
 
-def lesson_completed
-  @completed = []
-  User.find(1).lessons.each do |lesson|
-    lesson.lesson_responses.each do |lr|
-      if lr.marked_as_complete = true && lr.user_id = User.find(1)
-        @completed << lesson
-      end
-    end
-    @completed
-  end
-end
+# def lesson_completed
+#   @completed = []
+#   User.find(1).lesson_responses.each do |lr|
+#     if lr.marked_as_complete == true
+#       @completed << lr.marked_as_complete
+#     end
+#     @completed
+#   end
+# end
+
 
 
 end

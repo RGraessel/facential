@@ -18,6 +18,14 @@ class UsersController < ApplicationController
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
     @avatar = User.limit(1).all
+    @completed = []
+    current_user.lessons.each do |lesson|
+      lesson.lesson_responses.each do |lr|
+        if lr.marked_as_complete == true && lr.user_id = current_user
+          @completed << lr.marked_as_complete
+        end
+      end
+    end
   end
 
   # GET /users/new
@@ -71,14 +79,6 @@ class UsersController < ApplicationController
 
   private
 
-  # def has_attached_file
-  #
-  #   avatar_file_name
-  #   avatar_file_size
-  #   avatar_content_type
-  #   avatar_updated_at
-  #
-  # end
   def set_user
     @user = User.find(params[:id])
   end
