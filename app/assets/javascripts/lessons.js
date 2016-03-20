@@ -1,5 +1,7 @@
 var SAMPLE_SERVER_BASE_URL = 'http://localhost:3000';
 
+var isReRecord = false;
+
 var apiKey,
     sessionId,
     token,
@@ -7,7 +9,11 @@ var apiKey,
     archiveID;
 
 $(document).ready(function() {
-  $('#stop').hide();
+  $('#stop').show();
+  $('#stop').prop('disabled', true)
+  $('#view').show()
+  $('#view').prop('disabled', true)
+  $('#submit').prop('disabled', true)
   archiveID = null;
 
   // Make an Ajax request to get the OpenTok API key, session ID, and token from the server
@@ -37,18 +43,27 @@ function initializeSession() {
   });
 
   session.on('archiveStarted', function(event) {
+    if (isReRecord == true){
+      $.ajax('/rerecord?archive_id=' + archiveID)
+      $('#publisherHolder').show();
+      $('#replay').hide();
+    }
     archiveID = event.id;
     console.log('Archive started ' + archiveID);
-    $('#stop').show();
-    $('#start').hide();
+    $('#stop').prop('disabled', false);
+    $('#view').show();
   });
 
   session.on('archiveStopped', function(event) {
     archiveID = event.id;
     console.log('Archive stopped ' + archiveID);
-    $('#start').hide();
-    $('#stop').hide();
+    // $('#start').prop('disabled', true);
+    $('#stop').prop('disabled', true);
     $('#view').show();
+    $('#view').prop('disabled', false);
+    $('#submit').prop('disabled', false);
+    $('#start').empty
+    $('#start').html('Re-record');
   });
 
   session.on('sessionDisconnected', function(event) {
@@ -63,8 +78,8 @@ function initializeSession() {
     if (!error) {
       var publisher = OT.initPublisher('publisher', {
         insertMode: 'append',
-        width: '400px',
-        height: '225px'
+        width: '460px',
+        height: '285px'
       });
 
       session.publish(publisher);
@@ -78,9 +93,11 @@ function initializeSession() {
 function startArchive() {
   var lessonId = 1;
   $.post(SAMPLE_SERVER_BASE_URL + '/start/' + sessionId + '/' + lessonId);
-  $('#start').hide();
+  $('#start').show();
   $('#stop').show();
+  console.log('recordingnow!')
 }
+
 
 // Stop recording
 function stopArchive() {
@@ -88,46 +105,26 @@ function stopArchive() {
   $('#stop').hide();
   $('#view').prop('disabled', false);
   $('#stop').show();
+  console.log('stoppedrecording!')
 }
 
 // Get the archive status. If it is  "available", download it. Otherwise, keep checking
 // every 5 secs until it is "available"
 function viewArchive(){
-  $('#view').prop('disabled', true);
+  isReRecord = true
+  $('#view').prop('disabled', false);
+  $('#start').show()
+  $('#start').prop('disabled', false)
   $.ajax('/view?archive_id=' + archiveID)
     .always(function(data) {
-    $('#videos').empty
-    $('#videos').html(
-      "<video autoplay controls id='video1' width='420'>" +
+    $('#publisherHolder').hide();
+    $('#replay').empty();
+    $('#replay').append(
+      "<video autoplay id='video1' width='400' height='313px'>" +
       "  <source id='source' src='" + data.responseText + "' type='video/mp4'>" +
       "  Your browser does not support HTML5 video. " +
       "</video>"
     );
+    $('#replay').show();
   });
-}
-
-$('#start').show();
-$('#view').hide();
-
-
-var myVideo = document.getElementById("video_box1");
-
-
-function playPause() {
-    if (myVideo.paused)
-        myVideo.play();
-    else
-        myVideo.pause();
-}
-
-function makeBig() {
-    myVideo.width = 560;
-}
-
-function makeSmall() {
-    myVideo.width = 320;
-}
-
-function makeNormal() {
-    myVideo.width = 420;
 }
