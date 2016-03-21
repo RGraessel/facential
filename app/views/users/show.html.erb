@@ -78,16 +78,21 @@
       <div class="" id="videos">
           <div id='publisherHolder' class="video-resize">
             <div id="publisher"></div>
+          </div><!--same up to here -->
+            <div id='replay' class='video-resize' hidden>
           </div>
-          <div id='replay' class='video-resize' hidden>
+          </div>
+            <!-- </div> -->
+            <div class="col-md-10" id="buttons">
+            <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-info"><i class="material-icons">videocam</i></button>
+            <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-info"><i class="material-icons">stop</i></button>
+            <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-info"><i class="material-icons">play_arrow</i></button>
+            <button type="button" id="submit" onClick="javascript:submitArchive()" class="btn btn-info"><i class="material-icons">input</i></button>
+            <!-- <button type="button" id="replay" onClick="javascript:viewArchive()" class="btn btn-info">Replay Session</button> -->
+            </div>
           </div>
       </div>
       <!-- <div class="col-md-offset-1">
       Recent Lessons Submitted Section
     </div> -->
     </div>
-  </div>
-</div> <!-- closes col-md-10 for dashboard section, constraints
-  everything that is not in the partial -->
-</div> <!-- closes col-md-12 universal_container -->
-<!-- </div> -->
