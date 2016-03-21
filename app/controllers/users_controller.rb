@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user_topics = current_user.topics.each{|f| f}.first.id
     @avatar = User.limit(1).all
     @completed = []
+    # @last_archive_id = current_user.lesson_responses.last.archive_id
     current_user.lessons.each do |lesson|
       lesson.lesson_responses.each do |lr|
         if lr.marked_as_complete == true && lr.user_id = current_user

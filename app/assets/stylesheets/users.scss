@@ -34,7 +34,7 @@ div #medals_section {
   width: 26vw;
   height: 18vw;
   float: left;
-
+  margin-left: 120px;
 }
 
 div #recent_submissions_section {
@@ -71,6 +71,7 @@ div #recent_submissions_section {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin-left: 37px;
 }
 
 #badge_icon2 {
@@ -115,6 +116,7 @@ div #recent_submissions_section {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin-left: 37px;
 }
 
 #badge_icon6 {
@@ -159,6 +161,7 @@ div #recent_submissions_section {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin-left: 37px;
 }
 
 #badge_icon10 {
@@ -198,9 +201,9 @@ div #recent_submissions_section {
 ul.medals {
   li div {
       &:hover{
-      -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-      -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-      box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+        -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+-moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
     }
   }
 }
@@ -211,6 +214,10 @@ div .progress-bar-success {
 
 #space_replacing_course_name {
   height: 20px;
+}
+
+#buttons {
+  margin-left: 42px;
 }
 
 // div #medals_section  div #ml > ul > li > div{

@@ -4,12 +4,15 @@ Rails.application.routes.draw do
 
 
   resources :users do
+    member do
+      get :view_archived_video
+    end
   resources :courses do
     resources :topics do
       resources :lessons
+      end
     end
   end
-end
 
   root 'users#index'
 
@@ -27,6 +30,7 @@ end
   get '/view' => 'lessons#view_archived_video'
   get '/rerecord' => 'lessons#rerecord'
   get '/submit' => 'lessons#submit'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
