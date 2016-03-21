@@ -1,6 +1,6 @@
 <div class="col-md-12" id="universal_container">
   <div class="col-md-2" id="user_nav_partial">
-    <div><%= render :partial => '/commons/user_nav' %>
+    <div id="signed_in_as"><%= render :partial => '/commons/user_nav' %>
       <% if current_user %>
       Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
       <% else %>

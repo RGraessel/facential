@@ -1,9 +1,6 @@
-div.col-md-12 #user_nav_partial {
-  background-color: #26295D;
-}
 
 #full_login_nav {
-  height: 96vh;
+  height: 100vh;
   text-align: center;
 }
 
@@ -20,6 +17,7 @@ div.col-md-12 #user_nav_partial {
 }
 
 .list-group .list-group-item {
+  font-family: open sans;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
@@ -29,15 +27,20 @@ ul.form-group li input {
 }
 
 #full_login_nav {
-  background-color: #26295D;
+  background-color: #191E63;
 }
 
 #submit_button .btn-default {
-  color: #828282;
+  color: #555;
   background-color: #fff;
   border: 0px;
+  font-family: open sans;
 }
 
 li .form-control {
   border: 0px;
+}
+
+.form-control {
+  font-family: rajdhani;
 }
