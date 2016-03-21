@@ -31,6 +31,9 @@
 
 #full_user_name {
   font-size: 19px;
+  font-family: open sans;
+
+  color: #6D6B6B;
 }
 
 #after_username_space_div {
@@ -38,25 +41,34 @@
 }
 
 #completed_total{
+  background-image: url("lightOn.png");
   border-radius: 50%;
-  background: #A8A8A8;
+  background-color: #cccccc;
   height: 50px;
   width: 50px;
   float: left;
   margin-left: 3vw;
+  font-color: #ccc;
+  font-family: rajdhani;
+  background-size: cover;
 }
 
 #pending_total{
+  background-image: url("lightOff.png");
   border-radius: 50%;
-  background: #A8A8A8;
+  background-color: #cccccc;
   height: 50px;
   width: 50px;
   float: right;
   margin-right: 3vw;
+  font-color: #ccc;
+  font-family: rajdhani;
+  background-size: cover;
 }
 
 
 #completed_total_text {
+
   padding-top: 5vw;
 }
 
@@ -83,7 +95,7 @@ div .list-group-item:hover {
   -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
   -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
   box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-  background-color: #121328;
+  background-color: #E0E0E0;
 }
 
 input.btn {
@@ -97,6 +109,7 @@ div.col-md-12 #universal_container {
 
 #user_nav_partial {
   background-color: #DBDBDB;
+  font-family: open sans;
 }
 
 div.col-md-9 #available_lessons:hover {
