@@ -1,50 +1,54 @@
 <div class="col-md-12" id="universal_container">
-<div class="col-md-2" id="user_nav_partial">
-  <div><%= render :partial => '/commons/user_nav' %>
-    <% if current_user %>
+  <div class="col-md-2" id="user_nav_partial">
+    <div><%= render :partial => '/commons/user_nav' %>
+      <% if current_user %>
       Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
+      <% else %>
       <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
-<div class="col-md-10 container col-md-offset-2 ">
-  <div class="col-md-10 progress_block w3-hover-shadow" id="available_lessons">
-      <div class="col-md-10 progress" id="progress_bar">
-        <div class="progress-bar progress-bar-success" style= "width:  <%=(@completed.count / current_user.lessons.count.to_f).round(2) * 100%>%"></div>
+  <div id="space_above_first_lesson_bubble"></div>
+  <% current_user.lessons.each do |lesson| %>
+  <div class="col-md-9 container col-md-offset-3" id="user_screen_section">
+    <div class="col-md-9 progress_block w3-hover-shadow" id="available_lessons">
+      <div class ="col-md-2" id="course_progress"></div>
+      <div class="col-md-9 progress" id="progress_bar">
+        <div class="progress-bar progress-bar-success" style= "width: <%=(@completed.count / current_user.lessons.count.to_f).round(2) * 100%>%"></div>
       </div>
+      <span class="col-md-3" id="lesson_dash_text"><%= lesson.lesson_name.capitalize %></span>
+    </div>
   </div>
-</div>
+  <% end %>
+  <!-- closes col-md-10 id="course_name", this section has
+  upcoming lesson submissions -->
+  <div class="col-md-10 col-md-offset-2">
+    <div class="col-md-5" id="medals_section">
+      <div class="col-md-offset-1" id="ml">
+        <ul class="medals">
+          <li class="medal_list">
+            <div class ="col-md-2" id="badge_icon"></div>
+          </li>
+          <li>
+            <div class ="col-md-2" id="badge_icon"></div>
+          </li>
+          <li>
+            <div class ="col-md-2" id="badge_icon"></div>
+          </li>
+          <li>
+            <div class ="col-md-2" id="badge_icon"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-5 col-md-offset-2" id="recent_submissions_section">
+      <div class="col-md-offset-1">
+        Recent Lessons Submitted Section
+      </div>
 
-</div>
-
-<!-- <p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<p>
-  <strong>User role:</strong>
-  <%= @user.user_role %>
-</p>
- -->
-
-
-
-<!-- <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> -->
+    </div>
+  </div>
+</div> <!-- closes col-md-10 for dashboard section, constraints
+  everything that is not in the partial -->
+</div> <!-- closes col-md-12 universal_container -->
+<!-- </div> -->

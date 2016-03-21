@@ -96,7 +96,6 @@ class LessonsController < ApplicationController
 
     latest_submission = video_submission.update(marked_as_complete: true)
 
-byebug
     redirect_to user_courses_path(current_user)
 
   end
