@@ -25,7 +25,7 @@
         <%=link_to user_courses_path(current_user.id) do%>
         <div class="list-group-item">Courses</div>
         <% end %></br>
-        <%=link_to user_course_topics_path(current_user.id, @user_course) do %>
+        <%=link_to '/users/topics' do %>
         <div class="list-group-item">Topics</div>
         <% end %></br>
         <%=link_to user_course_topic_lessons_path(current_user.id, @user_course, @user_topics) do %>

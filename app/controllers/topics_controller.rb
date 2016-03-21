@@ -4,11 +4,18 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = current_user.topics
+    @topics = current_user.topics.where(course_id: params[:course_id])
     @courses = current_user.courses
     @users = current_user.id
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+  end
+
+  def all_topics
+    @topics = current_user.topics
+    @user_course = current_user.courses.each{|f| f}.first.id
+    @user_topics = current_user.topics.each{|f| f}.first.id
+    render :index
   end
 
   # GET /topics/1

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/users/topics' => 'topics#all_topics'
   resources :lesson_responses
 
 
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
 end
 
   root 'users#index'
-
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'

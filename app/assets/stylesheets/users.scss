@@ -30,8 +30,8 @@ div #medals_section {
   border-top-left-radius: 32px;
   border-bottom-right-radius: 32px;
   border-top-right-radius: 32px;
-  width: 30vw;
-  height: 20vw;
+  width: 26vw;
+  height: 18vw;
   float: left;
 
 }
@@ -59,6 +59,12 @@ div #recent_submissions_section {
   background: #A8A8A8;
   height: 50px;
   width: 50px;
+}
+
+div#badge_icon:hover{
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
 }
 
 // div #medals_section  div #ml > ul > li > div{
