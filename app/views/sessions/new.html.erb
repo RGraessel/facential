@@ -1,24 +1,35 @@
 <div class="col-md-12" id="universal_container">
 
-<div class="col-md-2" id="user_nav_partial"  style="display:none">
-  <div><%= render :partial => '/commons/login_nav' %>
+  <div class="col-md-2" id="user_nav_partial"  style="display:none">
+    <div><%= render :partial => '/commons/login_nav' %>
+    </div>
+  </div><!-- closes the nav partial section -->
+
+  <div class="col-md-10 col-md-offset-2" id="login_view">
+  <div id="space_above_first_lesson_bubble">
+  <div class="col-md-9 col-md-offset-1" id="menu">
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation" id="first"><a href="#">Platform</a></li>
+    <li role="presentation"><a href="#">Team</a></li>
+    <li role="presentation"><a href="#">Contact</a></li>
+    <li role="presentation" id="login"><a href="#">Login</a></li>
+  </ul>
   </div>
-</div>
-<div class="col-md-10 col-md-offset-2" id="login_view">
-<div id="space_above_first_lesson_bubble">
-<div class="col-md-9 col-md-offset-3" >
-<ul class="nav nav-pills" role="tablist">
-  <li role="presentation"><a href="#">Platform</a></li>
-  <li role="presentation"><a href="#">Team</a></li>
-  <li role="presentation"><a href="#">Contact</a></li>
-  <li role="presentation" id="login"><a href="#">Login</a></li>
-</ul>
-</div>
-</div>
+</div> <!-- closes the navbar menu section -->
 
-  <%= yield %>
-</div>
+  <div class="col-md-10" id="login_page_content">
 
+    <div class="col-md-10">
+      <h1>Review. Rehearse. Transform.</h1>
+    </div>
+    
+    <div id="second_text_box">
+    <div class="col-md-11">
+        <h2>A virtual Training and Coaching Platform engineered for
+        Individuals, Professionals, and Enterprises.</h2>
+    </div>
 
-
+  </div>
+    <%= yield %>
+  </div>
 </div> <!-- closes universal col-md-12 container -->
