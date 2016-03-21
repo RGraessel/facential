@@ -201,8 +201,12 @@ div#badge_icon:hover{
   box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
 }
 
-ul li div #badge_icon {
+div .progress-bar-success {
+    background-color: #2AC0FF !important;
+}
 
+#space_replacing_course_name {
+  height: 20px;
 }
 
 // div #medals_section  div #ml > ul > li > div{
