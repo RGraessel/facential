@@ -123,6 +123,7 @@ function viewArchive(){
   $.ajax('/view?archive_id=' + archiveID)
     .always(function(data) {
     $('#publisherHolder').hide();
+
     $('#replay').empty();
     $('#replay').append(
       "<video autoplay id='video1' width='400' height='313px'>" +
