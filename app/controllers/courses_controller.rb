@@ -7,15 +7,12 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = current_user.courses
-    @topics = current_user.topics
-    @user_course = current_user.courses.each{|f| f}.first.id
-    @user_topics = current_user.topics.each{|f| f}.first.id
-
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @courses = current_user.courses.find(params[:course_id])
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
     end

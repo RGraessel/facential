@@ -14,7 +14,7 @@
     <div class="col-md-9 progress_block w3-hover-shadow" id="available_lessons">
       <div class ="col-md-2" id="course_progress"></div>
       <div class="col-md-9 progress" id="progress_bar">
-        <div class="progress-bar progress-bar-success" style= "width: <%=(@completed.count / current_user.lessons.count.to_f).round(2) * 100%>%"></div>
+        <div class="progress-bar progress-bar-success" style= "width: <%=@completed[lesson] * 100%>%"></div>
       </div>
       <span class="col-md-3" id="lesson_dash_text"><%= lesson.lesson_name.capitalize %></span>
     </div>

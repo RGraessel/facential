@@ -12,12 +12,20 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
+    @lessons = current_user.lessons.where(topic_id: params[:topic_id])
     @topics = current_user.topics
-    @lessons = current_user.lessons
     @courses = current_user.courses
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
   end
+
+  def all_lessons
+    @lessons = current_user.lessons
+    @user_course = current_user.courses.each{|f| f}.first.id
+    @user_topics = current_user.topics.each{|f| f}.first.id
+    render :index
+  end
+
 
   # GET /lessons/1
   # GET /lessons/1.json

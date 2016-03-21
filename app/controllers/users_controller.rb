@@ -18,15 +18,17 @@ class UsersController < ApplicationController
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
     @avatar = User.limit(1).all
-    @completed = []
+    @completed = {}
     current_user.lessons.each do |lesson|
+      @completed[lesson] = 0
       lesson.lesson_responses.each do |lr|
-        if lr.marked_as_complete == true && lr.user_id = current_user
-          @completed << lr.marked_as_complete
+        if lr.marked_as_complete == true && lr.user_id == current_user.id
+          @completed[lesson] += 1
         end
       end
     end
-  end
+
+end
 
   # GET /users/new
   def new
