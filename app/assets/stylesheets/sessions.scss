@@ -5,7 +5,7 @@ div.col-md-2 #user_nav_partial_login {
 #universal_container_login {
     background-color: #DBDBDB;
 }
-// 
+//
 // #login_view {
 //   background-image: url("facentialYellow.png");
 //   background-position: 10vw, 0vh;
@@ -35,8 +35,12 @@ ul.nav li a:hover {
   -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
   -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
   box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-  background-color: #E0E0E0;
+  background-color: #F5F5F5;
 }
+
+ul.nav li a {
+  background-color: #DBDBDB;
+  }
 
 div.col-md-10 h1 {
   font-family: rajdhani;

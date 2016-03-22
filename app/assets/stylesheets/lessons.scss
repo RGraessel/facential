@@ -119,6 +119,23 @@ div#buttons .btn-info {
 
 div#buttons #start {
   color: #B7212F;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+
+div#buttons #stop {
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+
+div#buttons #view {
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+
+div#buttons #submit {
+  padding-top: 5px;
+  padding-bottom: 0px;
 }
 
 div#buttons .btn-info:hover {
@@ -130,6 +147,10 @@ div#buttons .btn-info:hover {
 
 div#buttons .btn {
   padding: 3px 5px;
+}
+
+div#buttons .btn:focus {
+  outline: none;
 }
 
 ul.nav>li>a {
@@ -144,28 +165,38 @@ ul.nav>li>a {
 }
 
 
-h1.col-md-6 {
-  font-size: 20px;
+div #lesson_notes > .btn-default {
+  margin-left: 49vw;
+  margin-bottom: 1vh;
+  font-size: 18px;
   font-family: open sans !important;
   text-align: center;
-  height: 3vh;
-  margin-top: 1vh;
-  margin-left: 31vw;
-  color: #333 !important;
+  color: #A8A8A8 !important;
+  border: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #F5F5F5;
 }
 
 p.script {
-  margin-top: 2vh;
+  margin-top: 3vh;
   margin-left: 31vw;
+  color: #4D4D4D;
 }
 
 div .progress-bar-success {
   background-color: #2AC0FF !important;
 }
 
-h1 .title:hover {
-    -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-    -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-    box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
-    background-color: #E0E0E0;
+div #lesson_notes > .btn-default:hover {
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  background-color: #F5F5F5;
+}
+
+div #lesson_notes > .btn-default:focus {
+  outline: none;
 }

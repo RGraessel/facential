@@ -96,7 +96,6 @@ function startArchive() {
   $.post(SAMPLE_SERVER_BASE_URL + '/start/' + sessionId + '/' + lessonId);
   $('#start').show();
   $('#stop').show();
-  console.log('recordingnow!')
   console.log(lessonId)
 }
 
@@ -107,7 +106,6 @@ function stopArchive() {
   $('#stop').hide();
   $('#view').prop('disabled', false);
   $('#stop').show();
-  console.log('stoppedrecording!')
 }
 
 
@@ -136,18 +134,8 @@ function viewArchive(){
   });
 }
 
-
 $(document).ready(function(){
   $('.title').click(function(){
     $('.script').slideToggle('slow')
   });
 });
-
-
-// $(document).ready(function(){
-//     $("button").click(function(){
-//         $("#div1").fadeToggle();
-//         $("#div2").fadeToggle("slow");
-//         $("#div3").fadeToggle(3000);
-//     });
-// });
