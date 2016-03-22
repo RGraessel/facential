@@ -97,6 +97,7 @@ function startArchive() {
   $('#start').show();
   $('#stop').show();
   console.log('recordingnow!')
+  console.log(lessonId)
 }
 
 
@@ -123,6 +124,7 @@ function viewArchive(){
   $.ajax('/view?archive_id=' + archiveID)
     .always(function(data) {
     $('#publisherHolder').hide();
+
     $('#replay').empty();
     $('#replay').append(
       "<video autoplay id='video1' width='400' height='313px'>" +
@@ -140,3 +142,12 @@ $(document).ready(function(){
     $('.script').slideToggle('slow')
   });
 });
+
+
+// $(document).ready(function(){
+//     $("button").click(function(){
+//         $("#div1").fadeToggle();
+//         $("#div2").fadeToggle("slow");
+//         $("#div3").fadeToggle(3000);
+//     });
+// });

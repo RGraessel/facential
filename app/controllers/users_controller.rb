@@ -15,10 +15,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
     @avatar = User.limit(1).all
     @completed = []
+    # @last_archive_id = current_user.lesson_responses.last.archive_id
     current_user.lessons.each do |lesson|
       lesson.lesson_responses.each do |lr|
         if lr.marked_as_complete == true && lr.user_id = current_user
