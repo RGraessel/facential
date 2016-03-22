@@ -8,11 +8,12 @@ Rails.application.routes.draw do
     member do
       get :view_archived_video
     end
+  end
   resources :courses do
-    resources :topics do
-      resources :lessons
-      end
-    end
+    resources :topics
+  end
+  resources :topics do
+    resources :lessons
   end
 
   root 'users#index'

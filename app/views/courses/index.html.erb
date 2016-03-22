@@ -11,7 +11,8 @@
 <div id="space_above_first_course_bubble"></div>
 <div class="col-md-10 col-md-offset-3">
   <% @courses.each do |course| %>
-  <%= link_to user_course_topics_path(current_user, course) do  %>
+  <%# course.topics.each do |topic| %>
+  <%= link_to course_topics_path(course, @topics) do  %>
   <div class="col-md-10" id="course_name"><%= course.course_name.capitalize %></div>
   <div class="col-md-10 progress_block w3-hover-shadow" id="wrapper">
     <div class="col-md-2" id="course_progress"></div>
@@ -19,6 +20,7 @@
       <span class="progress-bar progress-bar-success" style="width:50%"></span>
     </div>
   </div>
+  <%# end %>
   <% end %>
   <% end %>
 </div>
