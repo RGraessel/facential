@@ -9,8 +9,9 @@
     </div>
   </div>
   <div id="space_above_first_lesson_bubble"></div>
+  <div class="col-md-10" id="space_replacing_course_name"></div>
   <% current_user.lessons.each do |lesson| %>
-  <div class="col-md-9 container col-md-offset-3" id="user_screen_section">
+  <div class="col-md-10 container col-md-offset-3" id="user_screen_section">
     <div class="col-md-9 progress_block w3-hover-shadow" id="available_lessons">
       <div class ="col-md-2" id="course_progress"></div>
       <div class="col-md-9 progress" id="progress_bar">
@@ -20,73 +21,67 @@
     </div>
   </div>
   <% end %>
+
   <!-- closes col-md-10 id="course_name", this section has
   upcoming lesson submissions -->
   <div class="col-md-10 col-md-offset-2">
     <div class="col-md-5" id="medals_section">
       <!-- <div class="col-md-offset-1" id="ml"> -->
-        <ul class="medals">
-          <li class="medal_list">
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
-          </li>
-          <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
-          </li>
-          <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
-          </li>
-          <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
-          </li>
-        </ul>
+      <ul class="medals">
+        <li class="medal_list">
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon1"></div>
+        </li>
+        <li>
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon2"></div>
+        </li>
+        <li>
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon3"></div>
+        </li>
+        <li>
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon4"></div>
+        </li>
+      </ul>
       <div>
         <ul class="medals">
           <li class="medal_list">
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon5"></div>
           </li>
           <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon6"></div>
           </li>
           <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon7"></div>
           </li>
           <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon8"></div>
           </li>
         </ul>
       </div>
       <div>
         <ul class="medals">
           <li class="medal_list">
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon9"></div>
           </li>
           <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon10"></div>
           </li>
           <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon11"></div>
           </li>
           <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon"></div>
+            <div class ="col-md-5 col-md-offset-1" id="badge_icon12"></div>
           </li>
         </ul>
       </div>
-
     </div>
-    <div class="col-md-5 col-md-offset-2" id="recent_submissions_section">
-      <div class="" id="videos">
-          <div id='publisherHolder' class="video-resize">
-            <div id="publisher"></div>
-          </div>
-          <div id='replay' class='video-resize' hidden>
-          </div>
-      </div>
-      <!-- <div class="col-md-offset-1">
-      Recent Lessons Submitted Section
-    </div> -->
+    <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
+      <% current_user.topics.first %>
+      <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%"></div>
     </div>
   </div>
-</div> <!-- closes col-md-10 for dashboard section, constraints
-  everything that is not in the partial -->
-</div> <!-- closes col-md-12 universal_container -->
-<!-- </div> -->
+</div>
+
+    <!-- <div class="col-md-offset-1">
+    Recent Lessons Submitted Section
+  </div> -->
+</div>
