@@ -37,7 +37,8 @@ div #medals_section {
 div #recent_topic_progress {
   padding: 0;
   margin-top: 10vw;
-  background-color: gray;
+  background-image: url("topicMedal.png");
+  background-size: cover;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -221,7 +222,7 @@ div .topic_circle_progress{
   margin-left: auto;
   margin-right: auto;
   background-color: #2AC0FF;
-  opacity: 0.6;
+  opacity: 0.7;
   border-radius: 50%;
 }
 
