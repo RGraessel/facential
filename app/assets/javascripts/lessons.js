@@ -8,7 +8,7 @@
       status,
       archiveID;
 
-  $(document).ready(function() {
+  $(document).on("page:change", function() {
   $('#stop').show();
   $('#stop').prop('disabled', true)
   $('#view').show()
@@ -137,5 +137,6 @@ function viewArchive(){
 $(document).ready(function(){
   $('.title').click(function(){
     $('.script').slideToggle('slow')
+
   });
 });

@@ -11,7 +11,7 @@
 <div id="space_above_first_lesson_bubble"></div>
 
   <div class="col-md-10 col-md-offset-3">
-  <div class="col-md-1 progress_circle w3-hover-shadow" id="wrapper"></div>
+  <!-- <div class="col-md-4 progress_circle w3-hover-shadow" id="wrapper"></div> -->
   </div>
   <div class="col-md-10 col-md-offset-3">
   <% @lessons.each do |lesson| %>
@@ -19,7 +19,7 @@
   <div class="col-md-10" id="course_name"><%= lesson.lesson_name.capitalize %></div>
   <% end %>
   <%= link_to user_course_topic_lesson_path(current_user.id, lesson.topic.course, lesson.topic, lesson) do %>
-  <div class="col-md-10 progress_block w3-hover-shadow" id="wrapper">
+  <div class="col-md-4 progress_block w3-hover-shadow" id="wrapper">
     <div class="col-md-2" id="course_progress"></div>
     <div class="col-md-10 progress" id="progress_bar">
       <span class="progress-bar progress-bar-success" style="width:50%"></span>

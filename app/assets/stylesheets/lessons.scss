@@ -63,8 +63,8 @@ div #publisher {
 }
 
 #progress_bar{
-  margin-left: 50px;
-  width: 50%;
+  margin-left: 1vw;
+  width: 280px;
 }
 
 div.col-md-10 .col-md-offset-2 #lesson_screen_section {
@@ -180,10 +180,17 @@ div #lesson_notes > .btn-default {
   background-color: #F5F5F5;
 }
 
-p.script {
+textarea.script {
   margin-top: 3vh;
   margin-left: 31vw;
   color: #4D4D4D;
+  background-color: #DBDBDB;
+  border: 0px;
+
+}
+
+textarea .script:focus {
+  outline: 0;
 }
 
 div .progress-bar-success {
