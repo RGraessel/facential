@@ -19,13 +19,37 @@ class UsersController < ApplicationController
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
     @avatar = User.limit(1).all
-    @completed = []
+    @completed = {}
     # @last_archive_id = current_user.lesson_responses.last.archive_id
     current_user.lessons.each do |lesson|
+      @completed[lesson] = 0
       lesson.lesson_responses.each do |lr|
-        if lr.marked_as_complete == true && lr.user_id = current_user
-          @completed << lr.marked_as_complete
+        if lr.marked_as_complete == true && lr.user_id == current_user.id
+          @completed[lesson] += 1
         end
+      end
+    end
+
+
+    @topic_progress = {}
+    @topic_lesson_count = {}
+    @progress = {}
+
+    current_user.topics.each do |topic|
+      @topic_progress[topic] = 0
+      @topic_lesson_count[topic] = 0
+      topic.lessons.each do |lesson|
+        @topic_lesson_count[topic] +=1
+        lesson.lesson_responses.each do |lr|
+          if lr.marked_as_complete == true && lr.user_id == current_user.id
+            @topic_progress[topic] += 1
+          end
+        end
+      end
+      if @topic_lesson_count[topic] > 0
+        @progress[topic] = ((@topic_progress[topic] / @topic_lesson_count[topic].to_f).round(2) * 100)
+      else
+        @progress[topic] = 0
       end
     end
   end

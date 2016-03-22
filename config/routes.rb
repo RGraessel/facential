@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/users/topics' => 'topics#all_topics'
+  get '/users/lessons' => 'lessons#all_lessons'
   resources :lesson_responses
 
 

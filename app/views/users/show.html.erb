@@ -15,31 +15,32 @@
     <div class="col-md-9 progress_block w3-hover-shadow" id="available_lessons">
       <div class ="col-md-2" id="course_progress"></div>
       <div class="col-md-9 progress" id="progress_bar">
-        <div class="progress-bar progress-bar-success" style= "width: <%=(@completed.count / current_user.lessons.count.to_f).round(2) * 100%>%"></div>
+        <div class="progress-bar progress-bar-success" style= "width: <%=@completed[lesson] * 100%>%"></div>
       </div>
       <span class="col-md-3" id="lesson_dash_text"><%= lesson.lesson_name.capitalize %></span>
     </div>
   </div>
   <% end %>
+
   <!-- closes col-md-10 id="course_name", this section has
   upcoming lesson submissions -->
   <div class="col-md-10 col-md-offset-2">
     <div class="col-md-5" id="medals_section">
       <!-- <div class="col-md-offset-1" id="ml"> -->
-        <ul class="medals">
-          <li class="medal_list">
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon1"></div>
-          </li>
-          <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon2"></div>
-          </li>
-          <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon3"></div>
-          </li>
-          <li>
-            <div class ="col-md-5 col-md-offset-1" id="badge_icon4"></div>
-          </li>
-        </ul>
+      <ul class="medals">
+        <li class="medal_list">
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon1"></div>
+        </li>
+        <li>
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon2"></div>
+        </li>
+        <li>
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon3"></div>
+        </li>
+        <li>
+          <div class ="col-md-5 col-md-offset-1" id="badge_icon4"></div>
+        </li>
+      </ul>
       <div>
         <ul class="medals">
           <li class="medal_list">
@@ -72,27 +73,15 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
+      <% current_user.topics.first %>
+      <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%"></div>
+    </div>
+  </div>
+</div>
 
-    </div>
-    <div class="col-md-5 col-md-offset-1" id="recent_submissions_section">
-      <div class="" id="videos">
-          <div id='publisherHolder' class="video-resize">
-            <div id="publisher"></div>
-          </div><!--same up to here -->
-            <div id='replay' class='video-resize' hidden>
-          </div>
-          </div>
-            <!-- </div> -->
-            <div class="col-md-10" id="buttons">
-            <button type="button" id="start" onClick="javascript:startArchive()" class="btn btn-info"><i class="material-icons">videocam</i></button>
-            <button type="button" id="stop" onClick="javascript:stopArchive()" class="btn btn-info"><i class="material-icons">stop</i></button>
-            <button type="button" id="view" onClick="javascript:viewArchive()" class="btn btn-info"><i class="material-icons">play_arrow</i></button>
-            <button type="button" id="submit" onClick="javascript:submitArchive()" class="btn btn-info"><i class="material-icons">input</i></button>
-            <!-- <button type="button" id="replay" onClick="javascript:viewArchive()" class="btn btn-info">Replay Session</button> -->
-            </div>
-          </div>
-      </div>
-      <!-- <div class="col-md-offset-1">
-      Recent Lessons Submitted Section
-    </div> -->
-    </div>
+    <!-- <div class="col-md-offset-1">
+    Recent Lessons Submitted Section
+  </div> -->
+</div>

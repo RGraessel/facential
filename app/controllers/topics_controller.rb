@@ -5,16 +5,60 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = current_user.topics.where(course_id: params[:course_id])
-    @courses = current_user.courses
+    @courses = current_user.courses.where(course_id: params[:course_id])
     @users = current_user.id
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+    @topic_progress = {}
+    @topic_lesson_count = {}
+    @progress = {}
+
+    current_user.topics.each do |topic|
+      @topic_progress[topic] = 0
+      @topic_lesson_count[topic] = 0
+      topic.lessons.each do |lesson|
+        @topic_lesson_count[topic] +=1
+        lesson.lesson_responses.each do |lr|
+          if lr.marked_as_complete == true && lr.user_id == current_user.id
+            @topic_progress[topic] += 1
+          end
+        end
+      end
+      if @topic_lesson_count[topic] > 0
+        @progress[topic] = ((@topic_progress[topic] / @topic_lesson_count[topic].to_f).round(2) * 100)
+      else
+        @progress[topic] = 0
+      end
+    end
+
   end
 
   def all_topics
     @topics = current_user.topics
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+    @topic_progress = {}
+    @topic_lesson_count = {}
+    @progress = {}
+
+    current_user.topics.each do |topic|
+      @topic_progress[topic] = 0
+      @topic_lesson_count[topic] = 0
+      topic.lessons.each do |lesson|
+        @topic_lesson_count[topic] +=1
+        lesson.lesson_responses.each do |lr|
+          if lr.marked_as_complete == true && lr.user_id == current_user.id
+            @topic_progress[topic] += 1
+          end
+        end
+      end
+      if @topic_lesson_count[topic] > 0
+        @progress[topic] = ((@topic_progress[topic] / @topic_lesson_count[topic].to_f).round(2) * 100)
+      else
+        @progress[topic] = 0
+      end
+    end
+
     render :index
   end
 
@@ -22,6 +66,8 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
     @course = Course.find(params[:course_id])
+    @topics = current_user.topics.where(course_id: params[:course_id])
+
   end
 
   # GET /topics/new
