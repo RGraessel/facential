@@ -97,6 +97,7 @@ function startArchive() {
   $('#start').show();
   $('#stop').show();
   console.log('recordingnow!')
+  console.log(lessonId)
 }
 
 
@@ -141,3 +142,12 @@ $(document).ready(function(){
     $('.script').slideToggle('slow')
   });
 });
+
+
+// $(document).ready(function(){
+//     $("button").click(function(){
+//         $("#div1").fadeToggle();
+//         $("#div2").fadeToggle("slow");
+//         $("#div3").fadeToggle(3000);
+//     });
+// });
