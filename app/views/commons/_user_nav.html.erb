@@ -22,7 +22,7 @@
         <%=link_to user_path(current_user) do%>
         <div class="list-group-item">Dashboard</div>
         <% end %></br>
-        <%=link_to user_courses_path(current_user.id) do%>
+        <%=link_to courses_path(current_user.id) do%>
         <div class="list-group-item">Courses</div>
         <% end %></br>
         <%=link_to '/users/topics' do %>
