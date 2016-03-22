@@ -6,9 +6,12 @@ class TopicsController < ApplicationController
   def index
     @topics = current_user.topics.where(course_id: params[:course_id])
     @courses = current_user.courses.where(course_id: params[:course_id])
+    @lessons = current_user.lessons.where(topic_id: params[:topic_id])
     @users = current_user.id
+
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+
     @topic_progress = {}
     @topic_lesson_count = {}
     @progress = {}
@@ -35,8 +38,11 @@ class TopicsController < ApplicationController
 
   def all_topics
     @topics = current_user.topics
+    @lessons = current_user.lessons.where(topic_id: params[:topic_id])
+
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
+
     @topic_progress = {}
     @topic_lesson_count = {}
     @progress = {}
@@ -67,7 +73,7 @@ class TopicsController < ApplicationController
   def show
     @course = Course.find(params[:course_id])
     @topics = current_user.topics.where(course_id: params[:course_id])
-
+    @lessons = current_user.lessons.where(topic_id: params[:topic_id])
   end
 
   # GET /topics/new

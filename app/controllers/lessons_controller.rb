@@ -13,16 +13,35 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     @lessons = current_user.lessons.where(topic_id: params[:topic_id])
-    @topics = current_user.topics
+    @topics = current_user.topics.where(course_id: params[:course_id])
     @courses = current_user.courses
-    @user_course = current_user.courses.each{|f| f}.first.id
-    @user_topics = current_user.topics.each{|f| f}.first.id
+
+    @completed = {}
+    # @last_archive_id = current_user.lesson_responses.last.archive_id
+    current_user.lessons.each do |lesson|
+      @completed[lesson] = 0
+      lesson.lesson_responses.each do |lr|
+        if lr.marked_as_complete == true && lr.user_id == current_user.id
+          @completed[lesson] += 1
+        end
+      end
+    end
+
   end
 
   def all_lessons
+    @completed = {}
+    # @last_archive_id = current_user.lesson_responses.last.archive_id
+    current_user.lessons.each do |lesson|
+      @completed[lesson] = 0
+      lesson.lesson_responses.each do |lr|
+        if lr.marked_as_complete == true && lr.user_id == current_user.id
+          @completed[lesson] += 1
+        end
+      end
+    end
+
     @lessons = current_user.lessons
-    @user_course = current_user.courses.each{|f| f}.first.id
-    @user_topics = current_user.topics.each{|f| f}.first.id
     render :index
   end
 
@@ -30,9 +49,9 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-    @courses = Course.find(params[:course_id])
-    @topics = Topic.find(params[:topic_id])
-    @lessons = Lesson.find(params[:id])
+    @courses = current_user.courses
+    @topics = current_user.topics.where(course_id: params[:course_id])
+    @lessons = current_user.lessons.where(topic_id: params[:topic_id])
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
 
