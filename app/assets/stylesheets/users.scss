@@ -25,18 +25,19 @@ div.progress_circle {
 
 div #medals_section {
 
-  margin-top: 6vw;
+  margin-top: 4vw;
   border-top: 1px solid #2AC0FF;
   border-bottom: 1px solid #2AC0FF;
   width: 26vw;
-  height: 18vw;
+  height: 19vw;
   float: left;
   margin-left: 120px;
+  margin-bottom: 20px;
 }
 
 div #recent_topic_progress {
   padding: 0;
-  margin-top: 10vw;
+  margin-top: 1vw;
   background-image: url("topicMedal.png");
   background-size: cover;
   border-radius: 50%;
@@ -212,6 +213,9 @@ div .progress-bar-success {
 
 #space_replacing_course_name {
   height: 20px;
+  border-bottom: 1px solid #2AC0FF;
+  width: 30vw;
+  margin-bottom: 2vw;
 }
 
 #buttons {
@@ -219,14 +223,22 @@ div .progress-bar-success {
 }
 
 div .topic_circle_progress{
-  margin-top: 1.3vw;
-  margin-left: auto;
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 1.2vw;
+  margin-left: 1.2vw;
   margin-right: auto;
   background-color: #2AC0FF;
   opacity: 0.7;
   border-radius: 50%;
+  position: absolute;
 }
 
+.top_progress_title{
+  margin-top: 60px;
+  margin-right: 150px;
+  padding: 0;
+}
 // div #medals_section  div #ml > ul > li > div{
 //   float: left;
 // }

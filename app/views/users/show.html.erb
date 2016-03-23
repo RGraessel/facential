@@ -9,11 +9,9 @@
     </div>
   </div>
   <div id="space_above_first_lesson_bubble"></div>
-  <div class="col-md-10" id="space_replacing_course_name"></div>
+  <div class="col-md-10 col-md-offset-3" id="space_replacing_course_name">Lessons</div>
   <% current_user.lessons.each do |lesson| %>
-
   <div class="col-md-8" id="lesson_dash_text"><%= lesson.lesson_name.capitalize %></div>
-
   <%= link_to topic_lesson_path(current_user, lesson) do %>
 
   <div class="col-md-10 container col-md-offset-3" id="user_screen_section">
@@ -31,6 +29,7 @@
   upcoming lesson submissions -->
   <div class="col-md-10 col-md-offset-2">
     <div class="col-md-5" id="medals_section">
+      <div class="badge_title text-center">Badges</div>
       <!-- <div class="col-md-offset-1" id="ml"> -->
       <ul class="medals">
         <li class="medal_list">
@@ -79,13 +78,12 @@
         </ul>
       </div>
     </div>
+    <div class="top_progress_title text-center">Topic Progress</div>
     <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
-      <% @courses.each do |course| %>
-      <% current_user.topics.first %>
-      <%= link_to course_topics_path(course, @topics) do  %>
-      <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%"></div>
+      <% @topic.topic_name %>
+      <%= link_to course_topics_path(@topics) do  %>
+      <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%; max-width: 100px; max-height: 100px"></div>
     </div>
-    <% end %>
     <% end %>
   </div>
 </div>
