@@ -3,6 +3,7 @@
 }
 
 div.col-md-10 #user_screen_section {
+  margin-bottom: 11vh;
   padding-left: 0px;
   height: 100vh;
 }
@@ -235,10 +236,21 @@ div .topic_circle_progress{
 }
 
 .top_progress_title{
-  margin-top: 60px;
+  margin-top: 35px;
+  margin-bottom: 20px;
   margin-right: 150px;
   padding: 0;
 }
 // div #medals_section  div #ml > ul > li > div{
 //   float: left;
 // }
+
+span.badge_title {
+  position: absolute;
+  margin-left: 10vw;
+  margin-top: 36px;
+}
+
+div #space_under_lesson{
+  margin-bottom: 10vh;
+}
