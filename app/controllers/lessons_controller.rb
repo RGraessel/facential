@@ -54,7 +54,7 @@ class LessonsController < ApplicationController
     @lessons = current_user.lessons.where(topic_id: params[:topic_id])
     @user_course = current_user.courses.each{|f| f}.first.id
     @user_topics = current_user.topics.each{|f| f}.first.id
-
+    @lesson = Lesson.find(params[:id])
   end
 
   # def session_action
