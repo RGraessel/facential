@@ -86,7 +86,7 @@ class ApplicationController < ActionController::Base
 
       latest_submission = video_submission.update(marked_as_complete: true)
 
-      redirect_to user_courses_path(current_user)
+      redirect_to "/users/#{current_user.id}"
     end
 
 end

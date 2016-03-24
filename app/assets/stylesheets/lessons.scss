@@ -181,7 +181,7 @@ div #lesson_notes > .btn-default {
 }
 
 textarea.script {
-  margin-top: 3vh;
+  margin-top: 0vh;
   margin-left: 31vw;
   color: #4D4D4D;
   background-color: #DBDBDB;
@@ -206,4 +206,21 @@ div #lesson_notes > .btn-default:hover {
 
 div #lesson_notes > .btn-default:focus {
   outline: none;
+}
+
+#course_progress {
+  background-image: url("micIcon.png");
+  background-size: cover;
+}
+
+div.progress_circle {
+  background-image: url("micIcon.png");
+  background-size: cover;
+}
+
+div.progress_circle:hover {
+  -webkit-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  -moz-box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  box-shadow: 10px 11px 30px -16px rgba(0,0,0,0.65);
+  background-color: #F5F5F5;
 }

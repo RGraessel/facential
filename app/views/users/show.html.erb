@@ -17,7 +17,7 @@
     <div class="col-md-4 progress_block w3-hover-shadow" id="available_lessons">
       <div class ="col-md-2" id="course_progress"></div>
       <div class="col-md-9 progress" id="progress_bar">
-        <div class="progress-bar progress-bar-success" style= "width: <%=@completed[lesson] * 100 %>%"></div>
+        <div class="progress-bar progress-bar-success" style= "width: <%=@completed[lesson] * 100%>%"></div>
       </div>
     </div>
   </div>
@@ -78,12 +78,23 @@
         </ul>
       </div>
     </div>
+<<<<<<< HEAD
+    <div>
+      <div class="specificity_circle">
+    <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
+      <% @courses.each do |course| %>
+      <% current_user.topics.first %>
+      <%= link_to course_topics_path(course, @topics) do  %>
+         <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%; max-width: 100px; max-height: 100px"></div>
+=======
     <div class="top_progress_title text-center">Topic Progress</div>
     <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
       <% @topic.topic_name %>
       <%= link_to course_topics_path(@topics) do  %>
       <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%; max-width: 100px; max-height: 100px"></div>
+>>>>>>> 1105d8caec267c701cfad4ac45da6bc443bcfeac
     </div>
+  </div>
     <% end %>
   </div>
 </div>
