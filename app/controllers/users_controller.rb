@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @courses = current_user.courses
-    @topic = Topic.find(params[:id])
+    # @topic = Topic.find(params[:topic_id])
     @topics = current_user.topics.where(course_id: params[:course_id])
     @avatar = User.limit(1).all
     @completed = {}

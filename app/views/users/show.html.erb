@@ -78,28 +78,29 @@
         </ul>
       </div>
     </div>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
     <div>
       <div class="specificity_circle">
     <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
-      <% @courses.each do |course| %>
-      <% current_user.topics.first %>
-      <%= link_to course_topics_path(course, @topics) do  %>
+      <#% @courses.each do |course| %>
+      <#% current_user.topics.first %>
+
+      <%#= link_to course_topics_path(course, @topics) do  %>
          <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%; max-width: 100px; max-height: 100px"></div>
-=======
+======= -->
     <div class="top_progress_title text-center">Topic Progress</div>
     <div class="col-md-5 col-md-offset-2" id="recent_topic_progress">
-      <% @topic.topic_name %>
+      <!-- <#% @topics.topic_name %> -->
       <%= link_to course_topics_path(@topics) do  %>
       <div class="topic_circle_progress" style= "width: <%= @progress[current_user.topics.first] %>%; height: <%= @progress[current_user.topics.first] %>%; max-width: 100px; max-height: 100px"></div>
->>>>>>> 1105d8caec267c701cfad4ac45da6bc443bcfeac
+
     </div>
   </div>
     <% end %>
   </div>
-</div>
 
-    <!-- <div class="col-md-offset-1">
-    Recent Lessons Submitted Section
-  </div> -->
-</div>
+      <!-- <div class="col-md-offset-1">
+      Recent Lessons Submitted Section
+    </div> -->
+  </div>
+  </div>
