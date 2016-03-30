@@ -6,8 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+    user1 = User.new
+    user1.first_name = 'Carlos'
+    user1.last_name = 'Vazquez'
+    user1.email = 'carlos@facential.com'
+    user1.password_digest = 'test113'
+    user1.save!
 
-
+    user2 = User.new
+    user2.first_name = 'David'
+    user2.last_name = 'Kay'
+    user2.email = 'd_kay@facential.com'
+    user2.password_digest = 'test123'
+    user2.save!
 
   User.populate 5 do |user|
      user.first_name = Faker::Name.first_name

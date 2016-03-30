@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 4 }, allow_nil: true
   has_secure_password
 
-
-  validates :avatar, presence: true
+  # changed true to false in order to run rake db:seed
+  validates :avatar, presence: false
   has_attached_file :avatar, styles: { thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
