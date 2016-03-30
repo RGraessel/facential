@@ -38,8 +38,15 @@ div #medals_section {
 
 div #recent_topic_progress {
   padding: 0;
+<<<<<<< HEAD
   margin-top: 1vw;
   background-image: url("micIconGray.png");
+=======
+  margin-top: 10vw;
+  background-image: url("micIconGray.png");
+  margin-top: 1vw;
+  background-image: url("topicMedal.png");
+>>>>>>> 7e04aa05cc1245907b31cdb4ebd245d6f8dcdf97
   background-size: cover;
   border-radius: 50%;
   width: 100px;
@@ -273,8 +280,11 @@ span.badge_title {
 div #space_under_lesson{
   margin-bottom: 10vh;
 }
+<<<<<<< HEAD
 
 div.col-md-12 #universal_container {
   height: 100vh;
   background-color: #FAFAFA;
 }
+=======
+>>>>>>> 7e04aa05cc1245907b31cdb4ebd245d6f8dcdf97
