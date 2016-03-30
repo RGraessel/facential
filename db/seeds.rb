@@ -20,14 +20,14 @@
     user2.password_digest = 'test123'
     user2.save!
 
-  User.populate 5 do |user|
-     user.first_name = Faker::Name.first_name
-     user.last_name = Faker::Name.last_name
-     user.email = Faker::Internet.email
-     user.phone = Faker::PhoneNumber.phone_number
-     user.user_role = "student"
-     user.password_digest = Faker::Internet.password
-   end
+  # User.populate 5 do |user|
+  #    user.first_name = Faker::Name.first_name
+  #    user.last_name = Faker::Name.last_name
+  #    user.email = Faker::Internet.email
+  #    user.phone = Faker::PhoneNumber.phone_number
+  #    user.user_role = "student"
+  #    user.password_digest = Faker::Internet.password
+  #  end
 
   #  User.create(user_id: 6, first_name: "Samuel", last_name: "Samuels", user_role: student)
 
