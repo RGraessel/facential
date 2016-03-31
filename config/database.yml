@@ -24,10 +24,10 @@ test:
 
 production:
   adapter: postgresql
-  encoding: utf8
+  encoding: unicode
   database: facential_db
   pool: 5
-  username: 
+  username:
   password:
 
 
