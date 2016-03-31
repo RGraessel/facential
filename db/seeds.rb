@@ -16,7 +16,7 @@
     user2 = User.new
     user2.first_name = 'David'
     user2.last_name = 'Kay'
-    user2.email = 'd_kay@facential.com'
+    user2.email = 'david@facential.com'
     user2.password_digest = 'test123'
     user2.save!
 
