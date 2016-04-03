@@ -1,7 +1,7 @@
 require "opentok"
 OPENTOK_KEY = ENV["tok_box_api_key"]
 OPENTOK_SECRET = ENV["tok_box_secret"]
-#
+
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
