@@ -23,7 +23,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
+  adapter: heroku-postgresql:hobby-dev
   encoding: unicode
   database: facential_db
   pool: 5

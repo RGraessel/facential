@@ -22,7 +22,7 @@
     apiKey = res.api_key;
     sessionId = res.session_id;
     token = res.token;
-
+byebug
     initializeSession();
   });
 });
