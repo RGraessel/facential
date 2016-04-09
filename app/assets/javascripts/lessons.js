@@ -134,9 +134,9 @@ function viewArchive(){
   });
 }
 
-$(document).ready(function(){
+// $(document).ready(function(){
   $('.title').click(function(){
     $('.script').slideToggle('slow')
 
   });
-});
+// });
