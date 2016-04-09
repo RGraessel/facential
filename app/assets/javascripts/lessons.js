@@ -1,6 +1,6 @@
   var SAMPLE_SERVER_BASE_URL = 'https://facential.herokuapp.com';
-
-  var isReRecord = false;
+// var SAMPLE_SERVER_BASE_URL = 'http://localhost:3000';
+var isReRecord = false;
 
   var apiKey,
       sessionId,
