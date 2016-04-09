@@ -59,4 +59,5 @@ end
 group :production do
 gem 'pg'
 gem 'rails_12factor'
+gem "paperclip", "~> 4.3"
 end
