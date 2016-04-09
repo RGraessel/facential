@@ -28,7 +28,7 @@
 });
 
 function initializeSession() {
-  if(!window.location.pathname.match(/topics\/[0-9]+\/lessons\/[0-9]+/)){
+  if(!window.location.pathname.match(/topics\/[0-9]+\/lessons\/[0-9])){
     return false;
   }
   var session = OT.initSession(apiKey, sessionId);
