@@ -25,7 +25,7 @@
 
     initializeSession();
   });
-
+});
 
 function initializeSession() {
   if(!window.location.pathname.match(/topics\/[0-9]+\/lessons\/[0-9]+/)){
@@ -139,5 +139,4 @@ $(document).ready(function(){
     $('.script').slideToggle('slow')
 
   });
-});
 });
