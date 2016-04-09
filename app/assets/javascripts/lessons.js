@@ -17,7 +17,7 @@
   archiveID = null;
 
   // Make an Ajax request to get the OpenTok API key, session ID, and token from the server
-  $.get(SAMPLE_SERVER_BASE_URL + '/topics\/[0-9]+\/lessons\/[0-9]+/', function(res) {
+  $.get(SAMPLE_SERVER_BASE_URL + '/session', function(res) {
 
     apiKey = res.api_key;
     sessionId = res.session_id;
