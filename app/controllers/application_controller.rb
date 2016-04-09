@@ -1,6 +1,8 @@
 require "opentok"
-OPENTOK_KEY = ENV["tok_box_api_key"]
-OPENTOK_SECRET = ENV["tok_box_secret"]
+# OPENTOK_KEY = ENV["tok_box_api_key"]
+# OPENTOK_SECRET = ENV["tok_box_secret"]
+  OPENTOK_KEY = "45531522"
+  OPENTOK_SECRET = "09c96e57635fdddaf4d4dddd8625cdc0f0335de6"
 
 
 class ApplicationController < ActionController::Base
