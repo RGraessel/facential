@@ -7,7 +7,12 @@ var apiKey,
   token,
   status,
   archiveID;
+
 $(document).on("page:change", function() {
+  $('button.title').on("click" ,function(){
+    console.log(this);
+    $('.script').slideToggle('slow');
+  });
 
   $('#stop').show();
   $('#stop').prop('disabled', true)
@@ -129,10 +134,3 @@ $(document).on("page:change", function() {
         $('#replay').show();
     });
   };
-
-
-
-// $(document).ready(function(){
-//   $('.title').click(function(){
-//     $('.script').slideToggle('slow')
-//   });
